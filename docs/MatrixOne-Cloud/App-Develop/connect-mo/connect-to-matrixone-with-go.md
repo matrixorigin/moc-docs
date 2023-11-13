@@ -2,7 +2,7 @@
 
 MatrixOne Cloud 支持 Golang 连接，并且支持 [Go-MySQL-Driver](https://github.com/go-sql-driver/mysql)。
 
-本篇文档将指导你了解如何使用 `Golang` 以及 `Gorm` 连接 MatrixOne Cloud 。
+本篇文档将指导你了解如何使用 `Golang` 以及 `Gorm` 连接 MatrixOne Cloud。
 
 ## 开始前准备
 
