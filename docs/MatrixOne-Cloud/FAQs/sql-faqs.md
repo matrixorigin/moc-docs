@@ -1,6 +1,6 @@
 # **SQL 常见问题**
 
-* **MatrixOne 兼容哪个数据库?** 
+* **MatrixOne 兼容哪个数据库？** 
 
 MatrixOne 在使用上保持对 MySQL 8.0 的高度兼容，包括 SQL 语法，传输协议，操作符与函数等等。与 MySQL 8.0 兼容性的差异列表可以详细参考[ MySQL 兼容性列表](../Overview/mysql-compatibility.md)。
 
@@ -11,7 +11,7 @@ MatrixOne 目前支持的 SQL 语句可以参考[该详细列表](../Reference/S
 
 * **MatrixOne 支持哪些数据类型？**
 
-MatrixOne 目前支持常用的整型, 浮点数, 字符串, 时间日期, 布尔, 枚举, 二进制, JSON 类型，请参考[详细列表](../Reference/Data-Types/data-types.md)。
+MatrixOne 目前支持常用的整型，浮点数，字符串，时间日期，布尔，枚举，二进制，JSON 类型，请参考[详细列表](../Reference/Data-Types/data-types.md)。
 
 * **MatrixOne 支持什么类型的字符集？**
 
@@ -19,7 +19,7 @@ MatrixOne 默认支持 UTF-8 字符集，且目前只支持 UTF-8。
 
 * **MatrixOne 支持哪些约束和索引？**
 
-MatrixOne 目前支持主键(Primary Key), 唯一(Unique Key), 非空(Not Null)，外键(Foreign Key)，自增约束(Auto Increment) 及次级索引（Secondary Index）。次级索引目前仅实现语法支持，没有加速作用。
+MatrixOne 目前支持主键 (Primary Key), 唯一 (Unique Key), 非空 (Not Null)，外键 (Foreign Key)，自增约束 (Auto Increment) 及次级索引（Secondary Index）。次级索引目前仅实现语法支持，没有加速作用。
 另外 MatrixOne 还提供了针对无主键表的排序键 (Cluster by), 它可以帮助我们提前针对需要查询的列进行排序，加速查询。
 
 * **MatrixOne 支持哪些查询类型？**
@@ -53,7 +53,7 @@ MatrixOne 的保留关键字列表可参见 [该详细列表](../Reference/Langu
 * **如何将数据导入到 MatrixOne Cloud 中？**
 
 
-MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert-data.md) 数据插入语句, 可以通过 `INSERT` 进行实时数据写入，同时也支持 [`LOAD DATA`](../App-Develop/import-data/bulk-load/bulk-load-overview.md) 的离线批量导入语句。
+MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert-data.md) 数据插入语句，可以通过 `INSERT` 进行实时数据写入，同时也支持 [`LOAD DATA`](../App-Develop/import-data/bulk-load/bulk-load-overview.md) 的离线批量导入语句。
 
 在 MatrixOne Cloud 中，还可以通过应用界面上提供的 [`导入数据`](../App-Develop/import-data/bulk-load/load-s3.md) 功能离线将存储在对象存储中的 `csv` 文件或者 `jsonline` 文件导入实例。还可以通过数据发布订阅的方式，快速获取已经存储在其他实例上的数据。
 
@@ -63,7 +63,7 @@ MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert
 
 * **MatrixOne 是否支持事务？支持的事务隔离级别是什么？**
 
-MatrixOne 支持 ACID （原子性、一致性、隔离性、持久性） 的事务能力，支持悲观和乐观事务，默认使用悲观事务。使用悲观事务的时候会采用 Read Committed 隔离级别，切换成乐观事务的时候会采用 Snapshot Isolation 隔离级别。
+MatrixOne 支持 ACID（原子性、一致性、隔离性、持久性）的事务能力，支持悲观和乐观事务，默认使用悲观事务。使用悲观事务的时候会采用 Read Committed 隔离级别，切换成乐观事务的时候会采用 Snapshot Isolation 隔离级别。
 
 
 
