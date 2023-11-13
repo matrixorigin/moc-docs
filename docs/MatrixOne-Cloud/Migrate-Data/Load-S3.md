@@ -89,7 +89,7 @@ MatrixOne Cloud 提供了界面化的引导方式，使数据导入变得简单�
 
 对于 **CSV 文件格式**，您可以根据文件结构选择适当的字段分隔符和字段包围符。默认的字段分隔符是逗号（","），字段包围符是回车和换行符（"\r\n"），如下图所示：
 
-![选择 CSV 文件格式](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/import/s3/s3-3.png)
+![选择CSV文件格式](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/import/s3/s3-3.png)
 
 #### 步骤四：填写数据文件地址
 
