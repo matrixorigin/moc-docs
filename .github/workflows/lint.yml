@@ -20,7 +20,7 @@ jobs:
       id: changed-markdown-files
       uses: tj-actions/changed-files@v40
       with:
-        since_last_remote_commit: true 
+        since_last_remote_commit: false
         files: |
           **.md
     - name: Setup node
