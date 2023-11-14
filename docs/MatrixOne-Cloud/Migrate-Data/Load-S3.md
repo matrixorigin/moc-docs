@@ -162,7 +162,7 @@ INTO TABLE tbl_name
 
 注意：本方法用于导入 CSV 文件。
 
-#### 语法示例
+**语法示例**
 
 **使用 AK/SK 的认证方式加载 AWS S3 上的数据：**
 
@@ -236,7 +236,7 @@ INTO TABLE tbl_name
 
 注意：本方法用于导入 JSONLines 文件。
 
-#### 语法示例
+**语法示例**
 
 **使用 AK/SK 的认证方式加载 AWS S3 上的数据：**
 

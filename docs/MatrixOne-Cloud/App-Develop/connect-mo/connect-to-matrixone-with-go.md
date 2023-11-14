@@ -6,7 +6,6 @@ MatrixOne Cloud 支持 Golang 连接，并且支持 [Go-MySQL-Driver](https://gi
 
 ## 开始前准备
 
-
 - 已安装 [MySQL 客户端](https://dev.mysql.com/downloads/mysql)，如果你没有安装，可以点击 [MySQL 客户端](https://dev.mysql.com/downloads/mysql)至官方网站进行下载安装。
 
 - 已完成[创建实例](../../Instance-Mgmt/create-instance.md)。

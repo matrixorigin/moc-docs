@@ -12,7 +12,10 @@
     "lint:fix": "npm run lint:autocorrect:fix && npm run lint:zhlint:fix && npm run lint:markdownlint:fix",
     "lint:autocorrect": "node ./scripts/autocorrect",
     "lint:autocorrect:fix": "node ./scripts/autocorrect --fix",
-    "lint:zhlint": "npm run config:zhlint && npx zhlint './docs/MatrixOne-Cloud/**/*.md'"
+    "lint:zhlint": "npm run config:zhlint && npx zhlint './docs/MatrixOne-Cloud/**/*.md'",
+    "lint:zhlint:fix": "npm run config:zhlint && npx zhlint './docs/MatrixOne-Cloud/**/*.md' --fix",
+    "lint:markdownlint": "markdownlint-cli2 './docs/MatrixOne-Cloud/**/*.md'",
+    "lint:markdownlint:fix": "markdownlint-cli2-fix './docs/MatrixOne-Cloud/**/*.md'"
   },
   "devDependencies": {
     "autocorrect-node": "^2.8.4",

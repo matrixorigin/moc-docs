@@ -90,7 +90,7 @@ LOAD DATA URL s3option{"endpoint"='cos.ap-shanghai.myqcloud.com', "access_key_id
 
     ![Retrieve Access Key](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/develop/load_S3/retrieve_access_key.png)
 
-3.  在 MatrixOne Cloud 中创建表，SQL 示例如下：
+3. 在 MatrixOne Cloud 中创建表，SQL 示例如下：
 
     ```sql
     create database db;

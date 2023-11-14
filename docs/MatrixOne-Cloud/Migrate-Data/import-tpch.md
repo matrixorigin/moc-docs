@@ -4,7 +4,7 @@
 
 ## 步骤
 
-1. 登录你的 MatrixOne Cloud 账号，并选择目标 MatrixOne Cloud 实例。点击 **通过云平台连接** 进入 MatrixOne Cloud 数据库管理平台。在左侧菜单栏中，找到 **查询** 并选择 **查询编辑器** 模块，然后点击进入 SQL 编辑器页面。
+1. 登录你的 MatrixOne Cloud 账号，并选择目标 MatrixOne Cloud 实例。点击**通过云平台连接**进入 MatrixOne Cloud 数据库管理平台。在左侧菜单栏中，找到**查询**并选择**查询编辑器**模块，然后点击进入 SQL 编辑器页面。
 
 2. 在 SQL 编辑器界面中，你将看到一个**导入**按钮。
 

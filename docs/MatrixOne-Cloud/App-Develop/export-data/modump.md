@@ -52,7 +52,7 @@ MatrixOne Cloud 支持使用 `mo-dump` 导出数据。
 
 `mo-dump` 在命令行中非常易用。参见以下步骤示例，导出 *sql* 文件格式完整数据库：
 
-1. 选择目标实例，点击 **连接 > 通过第三方工具连接**，右侧滑窗内可查阅到 MatrixOne Cloud 上你的实例主机地址、端口号、用户名和密码。
+1. 选择目标实例，点击**连接 > 通过第三方工具连接**，右侧滑窗内可查阅到 MatrixOne Cloud 上你的实例主机地址、端口号、用户名和密码。
 
     !!! note
         mo-dump 暂不支持连接串的用户名格式（即不支持原格式 `<accountname>:<username>:<rolename>`)，需要更改为 `<accountname>#<username>#<rolename>`。

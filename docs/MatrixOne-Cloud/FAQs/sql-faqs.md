@@ -1,13 +1,12 @@
 # **SQL 常见问题**
 
-* **MatrixOne 兼容哪个数据库？** 
+* **MatrixOne 兼容哪个数据库？**
 
-MatrixOne 在使用上保持对 MySQL 8.0 的高度兼容，包括 SQL 语法，传输协议，操作符与函数等等。与 MySQL 8.0 兼容性的差异列表可以详细参考[ MySQL 兼容性列表](../Overview/mysql-compatibility.md)。
+MatrixOne 在使用上保持对 MySQL 8.0 的高度兼容，包括 SQL 语法，传输协议，操作符与函数等等。与 MySQL 8.0 兼容性的差异列表可以详细参考 [MySQL 兼容性列表](../Overview/mysql-compatibility.md)。
 
 * **MatrixOne 支持哪些 SQL 语句？**
 
 MatrixOne 目前支持的 SQL 语句可以参考[该详细列表](../Reference/SQL-Reference/SQL-Type.md)。
-
 
 * **MatrixOne 支持哪些数据类型？**
 
@@ -34,14 +33,11 @@ MatrixOne 支持大部分常用 SQL 查询：
 
 系统函数及操作符：支持常见的字符串，日期时间，数学函数及常见操作符。
 
-
 * **MatrixOne 有哪些保留关键字？**
 
-MatrixOne 的保留关键字列表可参见 [该详细列表](../Reference/Language-Structure/keywords.md)。 
+MatrixOne 的保留关键字列表可参见[该详细列表](../Reference/Language-Structure/keywords.md)。
 
 将保留关键字作为标识符使用时，必须使用反引号包裹，否则将产生报错。将非保留关键字作为标识符使用时，可以直接使用，无需使用反引号包裹。
-
-
 
 * **MatrixOne 中的函数和关键字是否区分大小写？**
 
@@ -49,9 +45,7 @@ MatrixOne 的保留关键字列表可参见 [该详细列表](../Reference/Langu
 
 在 MatrixOne 中，只有一种情况需要区分大小写：如果你创建的表和属性带有 \`\`，\`\` 中的名称需要注意大小写。查询这个表名或属性名，那么表名和属性名也需要被包含在\`\`里。
 
-
 * **如何将数据导入到 MatrixOne Cloud 中？**
-
 
 MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert-data.md) 数据插入语句，可以通过 `INSERT` 进行实时数据写入，同时也支持 [`LOAD DATA`](../App-Develop/import-data/bulk-load/bulk-load-overview.md) 的离线批量导入语句。
 
@@ -65,13 +59,9 @@ MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert
 
 MatrixOne 支持 ACID（原子性、一致性、隔离性、持久性）的事务能力，支持悲观和乐观事务，默认使用悲观事务。使用悲观事务的时候会采用 Read Committed 隔离级别，切换成乐观事务的时候会采用 Snapshot Isolation 隔离级别。
 
-
-
 * **MatrixOne 中的 `sql_mode` 是什么？**
 
   MatrixOne 默认的 `sql_mode` 是 MySQL 中的 `only_full_group_by`。因此默认查询语法中所有 `select` 的字段，除聚合函数中的字段，都必须在 `group by` 中出现。但是 MatrixOne 也支持修改 `sql_mode` 以兼容不完全规范的 `group by` 语法。
-
-
 
 * **如何查看我的 Query 执行计划？**
 
