@@ -32,7 +32,7 @@ jobs:
     - name: Install node deps
       if: steps.changed-markdown-files.outputs.any_changed == 'true'
       run: |
-        yarn install --frozen-lockfile
+        yarn install --immutable
     - name: Lint with markdownlint
       if: steps.changed-markdown-files.outputs.any_changed == 'true'
       run: |
