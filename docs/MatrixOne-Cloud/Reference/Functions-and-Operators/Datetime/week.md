@@ -56,4 +56,4 @@ mysql> SELECT WEEK(c1) FROM t1;
 
 ## **限制**
 
-MatrixOne 的 `WEEK()` 函数仅支持 `date` 参数，不支持可选参数 `[, mode]`，这一点是与 MySQL 是不同的。
+MatrixOne Cloud 的 `WEEK()` 函数仅支持 `date` 参数，不支持可选参数 `[, mode]`，这一点是与 MySQL 是不同的。
