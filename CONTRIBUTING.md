@@ -6,11 +6,11 @@
 
 我们鼓励您通过以下方式为 MatrixOne Cloud 文档做出贡献：
 
-- 如果您发现文档中存在任何过时、模糊或者错误的地方，请[创建一个 Issue](https://github.com/matrixone-cloud/moc-docs/issues/new) 来告知我们。您还可以提出在浏览文档时遇到的有关网站本身的任何问题。
+- 如果您发现文档中存在任何过时、模糊或者错误的地方，请[创建一个 Issue](https://github.com/matrixone-cloud/moc-docs/issues/new) 以告知我们。您还可以提出在浏览文档时遇到的有关网站本身的任何问题。
 - 对于显而易见的问题，如拼写错误或链接失效，您可以直接[创建一个 Pull Request](https://github.com/matrixone-cloud/moc-docs/compare) 进行修复。
 - 欢迎查看我们的 [Issue 列表](https://github.com/matrixone-cloud/moc-docs/issues)，如果其中有您感兴趣的问题，您可通过在 Issue 下方评论来参与讨论，或者创建 Pull Request 的方式来解决它们。
 
-创建 Issue 通常是对文档发起改动的第一步，如果您不知道该如何开始，请直接创建 Issue 告知我们您的想法。
+通常，创建 Issue 是对文档发起改动的第一步，如果您不知道该如何开始，请直接创建 Issue 告知我们您的想法。
 
 ## 创建 Pull Request
 
