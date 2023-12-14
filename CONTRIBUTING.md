@@ -1,6 +1,6 @@
 # 贡献指南
 
-我们诚挚地欢迎任何人为 MatrixOne Cloud 文档做出贡献。
+本文档将会指导您如何参与 MatrixOne Cloud 文档的建设。
 
 ## 贡献类型
 
