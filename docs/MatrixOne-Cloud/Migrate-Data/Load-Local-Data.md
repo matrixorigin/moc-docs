@@ -56,14 +56,14 @@ LOAD DATA LOCAL INFILE '/ssb-dbgen-path/lineorder_flat.tbl ' INTO TABLE lineorde
 
 加载 csv 格式支持 JSON 类型，但需确保 JSON 内不包含字段终止符号，否则 JSON 需要用双引号括起来，例如：
 
-- 正确示例："{"a": 1, "b": 2}", 2
-- 错误示例：{"a": 1, "b": 2}, 2
+- 正确示例：“{” a “：1，” b “：2}”，2
+- 错误示例：{“a”：1，“b”：2}，2
 
 ### 导入 jsonlines 文件
 
 **关于 jsonlines 格式**
 
-JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。JSONLines 是一种更方便存储结构化数据的格式，也称为换行符分隔的 JSON。每一行都是独立、完整和合法的 JSON 值，行与行之间采用 '\n' 作为分隔符。
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式。JSONLines 是一种更方便存储结构化数据的格式，也称为换行符分隔的 JSON。每一行都是独立、完整和合法的 JSON 值，行与行之间采用 ‘\n’ 作为分隔符。
 
 MatrixOne Cloud 对于 JSONLines 格式有一些要求，它只允许包含相同数据类型和普通结构的 JSON 对象或 JSON 数组。MatrixOne Cloud 暂时不支持具有嵌套结构的 JSONLines 文件。
 
@@ -75,7 +75,7 @@ MatrixOne Cloud 对于 JSONLines 格式有一些要求，它只允许包含相�
 {"id":3,"father":"Bob","mother":"Monika"}
 ```
 
-**无效 JSONLines 对象示例（包含嵌套结构）**
+**无效 JSONLines 对象示例 (包含嵌套结构)**
 
 ```json
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
@@ -83,7 +83,7 @@ MatrixOne Cloud 对于 JSONLines 格式有一些要求，它只允许包含相�
 {"id":3,"father":"Bob","mother":"Monika","children":["Jerry","Karol"]}
 ```
 
-**有效 JSONLines 数组示例（类似于 csv 格式）**
+**有效 JSONLines 数组示例 (类似于 csv 格式)**
 
 ```json
 ["Name", "Session", "Score", "Completed"]
@@ -93,7 +93,7 @@ MatrixOne Cloud 对于 JSONLines 格式有一些要求，它只允许包含相�
 ["Deloise", "2012A", 19, true]
 ```
 
-**无效 JSONLines 数组示例（数据类型和列数不匹配）**
+**无效 JSONLines 数组示例 (数据类型和列数不匹配)**
 
 ```json
 ["Gilbert", "2013", 24, true, 100]
@@ -136,7 +136,7 @@ LOAD DATA LOCAL INFILE {'filepath'='/mo_data/data.jl.gz', 'compression'='gzip','
 
 ## 使用 Source 命令导入
 
-MatrixOne Cloud 支持使用 SOURCE 命令从外部 SQL 脚本文件执行 SQL 语句，从而导入整个数据库结构（包括表结构和数据）。需要注意的是，当处理大量数据时，性能可能不如 LOAD DATA 命令高，因为 SOURCE 命令需要解析和执行每个 SQL 语句。
+MatrixOne Cloud 支持使用 SOURCE 命令从外部 SQL 脚本文件执行 SQL 语句，从而导入整个数据库结构 (包括表结构和数据)。需要注意的是，当处理大量数据时，性能可能不如 LOAD DATA 命令高，因为 SOURCE 命令需要解析和执行每个 SQL 语句。
 
 **语法结构**
 

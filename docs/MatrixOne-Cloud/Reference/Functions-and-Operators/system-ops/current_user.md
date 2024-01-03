@@ -1,4 +1,4 @@
-# **CURRENT_USER, CURRENT_USER()**
+# **CURRENT_USER，CURRENT_USER()**
 
 ## **语法说明**
 

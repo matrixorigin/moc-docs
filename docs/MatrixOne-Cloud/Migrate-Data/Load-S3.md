@@ -24,7 +24,7 @@ MatrixOne 支持从对象存储服务批量导入以下数据文件类型：
 
 #### 关于 JSONLines 格式
 
-JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，而 JSONLines 是一种更为方便存储结构化数据的格式，它采用换行符作为分隔符，每行都包含独立、完整且合法的 JSON 值。这种格式适合处理数据流，因为每行都代表一个单独的条目，可以轻松流式传输，无需自定义解析器。请注意，MatrixOne 对 JSONLines 格式的要求较为严格，只允许包含相同类型值和普通结构的 JSON 对象或 JSON 数组。如果 JSONLines 文件具有嵌套结构，MatrixOne 目前不支持加载它。
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式，而 JSONLines 是一种更为方便存储结构化数据的格式，它采用换行符作为分隔符，每行都包含独立、完整且合法的 JSON 值。这种格式适合处理数据流，因为每行都代表一个单独的条目，可以轻松流式传输，无需自定义解析器。请注意，MatrixOne 对 JSONLines 格式的要求较为严格，只允许包含相同类型值和普通结构的 JSON 对象或 JSON 数组。如果 JSONLines 文件具有嵌套结构，MatrixOne 目前不支持加载它。
 
 以下是 JSONLines 格式的示例：
 
@@ -36,7 +36,7 @@ JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，�
 {"id": 3, "father": "Bob", "mother": "Monika"}
 ```
 
-**无效 JSONLines 对象示例（具有嵌套结构）：**
+**无效 JSONLines 对象示例 (具有嵌套结构)：**
 
 ```json
 {"id": 1, "father": "Mark", "mother": "Charlotte", "children": ["Tom"]}
@@ -44,7 +44,7 @@ JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，�
 {"id": 3, "father": "Bob", "mother": "Monika", "children": ["Jerry", "Karol"]}
 ```
 
-**有效 JSONLines 数组示例（类似于 CSV 格式）：**
+**有效 JSONLines 数组示例 (类似于 CSV 格式)：**
 
 ```json
 ["Name", "Session", "Score", "Completed"]
@@ -54,7 +54,7 @@ JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，�
 ["Deloise", "2012A", 19, true]
 ```
 
-**无效 JSONLines 数组示例（因数据类型和列数不匹配而无效）：**
+**无效 JSONLines 数组示例 (因数据类型和列数不匹配而无效)：**
 
 ```json
 ["Gilbert", "2013", 24, true, 100]
@@ -75,19 +75,19 @@ MatrixOne Cloud 提供了界面化的引导方式，使数据导入变得简单�
 
 #### 步骤一：打开导入窗口
 
-在 SQL 编辑器功能中，单击 "导入" 按钮，如下图所示：
+在 SQL 编辑器功能中，单击 “导入” 按钮，如下图所示：
 
 ![打开导入窗口](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/import/s3/s3-1.png)
 
 #### 步骤二：选择文件所在的对象存储
 
-点击 "导入你的数据"，并选择要导入的对象存储服务，如下图所示：
+点击 “导入你的数据”，并选择要导入的对象存储服务，如下图所示：
 
 ![选择对象存储服务](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/import/s3/s3-2.png)
 
 #### 步骤三：选择数据文件格式
 
-对于 **CSV 文件格式**，您可以根据文件结构选择适当的字段分隔符和字段包围符。默认的字段分隔符是逗号（","），字段包围符是回车和换行符（"\r\n"），如下图所示：
+对于 **CSV 文件格式**，您可以根据文件结构选择适当的字段分隔符和字段包围符。默认的字段分隔符是逗号 (“，”)，字段包围符是回车和换行符 (“\r\n”)，如下图所示：
 
 ![选择 CSV 文件格式](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/import/s3/s3-3.png)
 
@@ -152,13 +152,13 @@ INTO TABLE tbl_name
 - `provider`：对象存储所在的公有云，例如 AWS 或阿里云。如果不填写，默认是 AWS。
 - `endpoint`：OSS 的访问域名，例如 oss-cn-hangzhou.internal.aliyuncs.com。对于阿里云，此参数必填；对于 AWS，无需填写。
 - `bucket`：数据所在的存储桶。
-- `access_key_id`：AccessKey ID（可选）。
-- `secret_access_key`：AccessKey Secret（可选）。
-- `role_arn`：RAM 角色的 ARN（可选）。
-- `external_id`：（可选）
+- `access_key_id`：AccessKey ID (可选)。
+- `secret_access_key`：AccessKey Secret (可选)。
+- `role_arn`：RAM 角色的 ARN (可选)。
+- `external_id`：(可选)
 - `file_path`：完整的对象存储文件路径，例如 mocloud_sampledata/tpch-sf1/lineitems.csv。
 - `format`：对象存储文件格式，默认是 CSV。
-- `compression`：对象存储文件的压缩格式，如果不填写或值为 "none"。
+- `compression`：对象存储文件的压缩格式，如果不填写或值为 “none”。
 
 注意：本方法用于导入 CSV 文件。
 
@@ -225,14 +225,14 @@ INTO TABLE tbl_name
 
 - `endpoint`：OSS 的访问域名，例如 oss-cn-hangzhou.internal.aliyuncs.com。对于阿里云，此参数必填；对于 AWS，无需填写。
 - `bucket`：数据所在的存储桶。
-- `access_key_id`：AccessKey ID（可选）。
-- `secret_access_key`：AccessKey Secret（可选）。
-- `role_arn`：RAM 角色的 ARN（可选）。
-- `external_id`：（可选）
+- `access_key_id`：AccessKey ID (可选)。
+- `secret_access_key`：AccessKey Secret (可选)。
+- `role_arn`：RAM 角色的 ARN (可选)。
+- `external_id`：(可选)
 - `file_path`：完整的对象存储文件路径，例如 mocloud_sampledata/tpch-sf1/lineitems.csv。
-- `format`：对象存储文件格式，必须填写为 "jsonline"。
-- `jsondata`：JSON 数据格式（可选）。
-- `compression`：对象存储文件的压缩格式，如果不填写或值为 "none"。
+- `format`：对象存储文件格式，必须填写为 “jsonline”。
+- `jsondata`：JSON 数据格式 (可选)。
+- `compression`：对象存储文件的压缩格式，如果不填写或值为 “none”。
 
 注意：本方法用于导入 JSONLines 文件。
 
@@ -278,7 +278,7 @@ INTO TABLE t1;
 
 ##### **AWS**
 
-建议使用 IAM 用户（而不是 AWS 账户的根用户）创建访问密钥。具体步骤如下：
+建议使用 IAM 用户 (而不是 AWS 账户的根用户) 创建访问密钥。具体步骤如下：
 
 1. 创建 IAM 用户，并为该用户分配源数据存储桶的 `AmazonS3ReadOnlyAccess` 策略，以及 `CreateOwnAccessKeys` 和 `ManageOwnAccessKeys` 的策略。详情请参阅[创建 IAM 用户](https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)。
 2. 使用 IAM 用户登录 [IAM 控制台](https://console.aws.amazon.com/iam)。
@@ -286,7 +286,7 @@ INTO TABLE t1;
 
 ##### **阿里云**
 
-建议使用 RAM 用户（而不是阿里云账户的根用户）创建访问密钥。具体步骤如下：
+建议使用 RAM 用户 (而不是阿里云账户的根用户) 创建访问密钥。具体步骤如下：
 
 1. 创建 RAM 用户，并为该用户分配源数据存储桶的 `AliyunOSSReadOnlyAccess` 策略。详情请参阅[创建 RAM 用户](https://help.aliyun.com/zh/ram/user-guide/create-a-ram-user?spm=a2c4g.11174283.0.0.40572230YxfiT6)。
 2. 使用 RAM 用户登录 [RAM 控制台](https://ram.console.aliyun.com/overview)。

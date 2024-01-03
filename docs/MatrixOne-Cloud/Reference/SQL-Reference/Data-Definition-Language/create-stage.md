@@ -2,11 +2,11 @@
 
 ## **语法说明**
 
-`CREATE STAGE` 用于在 MatrixOne Cloud 数据库中创建一个命名的内部或外部数据阶段（Stage），用于**数据导出**，你可以创建一个数据阶段，通过将数据导出到数据阶段，你可以将数据文件下载到本地或将其存储在云存储服务中。
+`CREATE STAGE` 用于在 MatrixOne Cloud 数据库中创建一个命名的内部或外部数据阶段 (Stage)，用于**数据导出**，你可以创建一个数据阶段，通过将数据导出到数据阶段，你可以将数据文件下载到本地或将其存储在云存储服务中。
 
-- **内部阶段（Internal Stage）**：内部阶段将数据文件存储在 MatrixOne Cloud 内部。内部阶段可以是永久性的或临时性的。
+- **内部阶段 (Internal Stage)**：内部阶段将数据文件存储在 MatrixOne Cloud 内部。内部阶段可以是永久性的或临时性的。
 
-- **外部阶段（External Stage）**：外部阶段引用存储在 MatrixOne Cloud 之外位置的数据文件。目前，支持以下云存储服务：
+- **外部阶段 (External Stage)**：外部阶段引用存储在 MatrixOne Cloud 之外位置的数据文件。目前，支持以下云存储服务：
 
   - Amazon S3 存储桶
   - Aliyun 存储桶
@@ -22,8 +22,8 @@
 - 如果不使用 `STAGE`，用户 `SELECT INTO` 时必须强行加入 `credential` 信息。
 
 !!! note
-    1. 集群管理员（即 root 用户）和租户管理员可以创建数据阶段。
-    2. 创建完成数据阶段以后，数据表只能导入至 STAGE 指定路径。
+    1。集群管理员 (即 root 用户) 和租户管理员可以创建数据阶段。
+    2。创建完成数据阶段以后，数据表只能导入至 STAGE 指定路径。
 
 ## **语法结构**
 
@@ -54,11 +54,11 @@ ENABLE = { TRUE | FALSE }
 
 - `StageParams`：这是一个参数组，用于指定 Stage 的配置参数。
 
-  - `endpoint`：Stage 的连接 URL，指定对象存储服务的位置。对于不同的对象存储服务（如 Amazon S3、Aliyun OSS、文件系统等），这个 URL 的内容可能有所不同。例如：s3.us-west-2.amazonaws.com
+  - `endpoint`：Stage 的连接 URL，指定对象存储服务的位置。对于不同的对象存储服务 (如 Amazon S3、Aliyun OSS、文件系统等)，这个 URL 的内容可能有所不同。例如：s3.us-west-2.amazonaws.com
 
   - `CREDENTIALS`：这是一个 JSON 对象，包含连接到对象存储服务所需的凭证信息，如 `access_key_id`、`secret_access_key` 等。
 
-- `directoryTableParams`：这是一个参数组，用于指定 Stage 的目录表（directory table）的配置。
+- `directoryTableParams`：这是一个参数组，用于指定 Stage 的目录表 (directory table) 的配置。
 
   - `ENABLE`：是否启用目录表，值为 `TRUE` 或 `FALSE`。
 

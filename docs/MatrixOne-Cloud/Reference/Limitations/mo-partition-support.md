@@ -1,19 +1,19 @@
 # MatrixOne DDL 语句分区支持的说明
 
-## 1. MatrixOne 支持的分区类型
+## 1。MatrixOne 支持的分区类型
 
 目前 MatrixOne 的 DDL 语句支持的 6 种分区类型，与 MySQL 官网基本一致，具体如下：
 
 - KEY Partitioning
 - HASH Partitioning
 
-目前支持子分区（Subpartitioning）语法，但是不支持计划构建。
+目前支持子分区 (Subpartitioning) 语法，但是不支持计划构建。
 
-## 2. 关于分区键的说明
+## 2。关于分区键的说明
 
-### Partition Keys, Primary Keys 和 Unique Keys 的关系
+### Partition Keys，Primary Keys 和 Unique Keys 的关系
 
-分区键（Partition Keys）、主键（Primary Keys）和唯一键（Unique Keys）的关系规则可以概括为：
+分区键 (Partition Keys)、主键 (Primary Keys) 和唯一键 (Unique Keys) 的关系规则可以概括为：
 
 分区表的分区表达式中使用的所有列必须是该表可能具有的每个唯一键的一部分。
 
@@ -56,7 +56,7 @@ ERROR 1503 (HY000): A PRIMARY KEY must include all columns in the table's partit
 
 1. KEY 只接受零个或多个列名的列表。在表有主键的情况下，用作分区键的任何列必须包含表主键的一部分或全部。
 
-    如果没有指定列名作为分区键，则使用表的主键（如果有）。例如，以下 `CREATE TABLE` 语句在 MySQL 中有效。
+    如果没有指定列名作为分区键，则使用表的主键 (如果有)。例如，以下 `CREATE TABLE` 语句在 MySQL 中有效。
 
 2. 如果没有主键，但有 UNIQUE KEY，那么 UNIQUE KEY 用于分区键。
 
@@ -77,7 +77,7 @@ PARTITIONS 4;
 !!! note
     其他分区规则与 MySQL 基本保持一致。
 
-## 3. 关于 MatrixOne 分区表达式的说明
+## 3。关于 MatrixOne 分区表达式的说明
 
 ​ 在 DDL 语句构建分区表时，会针对每一种分区定义生成一个分区表达式，该分区表达式可用于计算数据的所属的分区。
 

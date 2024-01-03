@@ -1,6 +1,6 @@
 # gorm 基础示例
 
-本篇文档将指导你如何使用 **golang** 和 **gorm** 构建一个简单的应用程序，并实现 CRUD（创建、读取、更新、删除）功能。
+本篇文档将指导你如何使用 **golang** 和 **gorm** 构建一个简单的应用程序，并实现 CRUD (创建、读取、更新、删除) 功能。
 
 **Gorm** 是 Python 语言中最流行的 ORM 工具之一。
 
@@ -36,11 +36,11 @@
 	go get -u gorm.io/driver/mysql
 	```
 
-你可以参考 [Golang 连接 MatrixOne Cloud 服务](../connect-mo/connect-to-matrixone-with-go.md)了解如何通过 `Gorm` 连接到 MatrixOne Cloud，本篇文档将指导你如何实现 CRUD（创建、读取、更新、删除）。
+你可以参考 [Golang 连接 MatrixOne Cloud 服务](../connect-mo/connect-to-matrixone-with-go.md)了解如何通过 `Gorm` 连接到 MatrixOne Cloud，本篇文档将指导你如何实现 CRUD (创建、读取、更新、删除)。
 
 ## 新建表
 
-作为对象关系映射器（ORM）工具，`Gorm` 允许开发人员创建 GO 类来映射关系数据库中的表。
+作为对象关系映射器 (ORM) 工具，`Gorm` 允许开发人员创建 GO 类来映射关系数据库中的表。
 在下面的代码示例中，将创建一个 `USER` 类，这里的类名和属性名称必须使用大写英文开头以保证 `public` 访问，否则不能创建。`USER` 类在 `GORM` 的作用下将转化为一条 `SQL` 语句，创建表名为 `users` 的表。
 新建一个 `gorm_create.go` 的文本文件，将以下代码拷贝粘贴到文件内：
 

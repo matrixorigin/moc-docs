@@ -81,7 +81,7 @@
 
 在 MatrixOne Cloud 中，发布订阅是对 MatrixOne Cloud 中指定用户的数据库发起的数据共享访问，MatrixOne Cloud 允许一个账号下的多个实例及跨账号的实例间进行数据发布订阅。
 
-**Note:** 当前 MatrixOne Cloud 中仅支持 *moadmin* 和 *accountadmin* 角色才可以进行发布订阅操作。
+**Note：**当前 MatrixOne Cloud 中仅支持 *moadmin* 和 *accountadmin* 角色才可以进行发布订阅操作。
 
 - **发布端**
 

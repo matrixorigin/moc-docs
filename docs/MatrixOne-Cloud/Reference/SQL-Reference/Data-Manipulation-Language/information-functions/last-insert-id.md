@@ -4,7 +4,7 @@
 
 若表中含自增字段 `AUTO_INCREMENT`，则向表中插入一条记录后，可以调用 `LAST_INSERT_ID()` 来获得最近插入的那行记录的自增字段值。
 
-如果没有插入参数，LAST_INSERT_ID() 返回一个 BIGINT UNSIGNED（64 位）值，该值表示作为最近执行的 INSERT 语句的结果成功插入到 `AUTO_INCREMENT` 列的第一个自动生成的值。返回值取决于之前 `AUTO_INCREMENT` 列的值，如果你之前没有插入一个列，那么返回值从 1 开始，如果你之前插入了一个列，那么返回值为 `AUTO_INCREMENT` 列的值增加 1。
+如果没有插入参数，LAST_INSERT_ID() 返回一个 BIGINT UNSIGNED (64 位) 值，该值表示作为最近执行的 INSERT 语句的结果成功插入到 `AUTO_INCREMENT` 列的第一个自动生成的值。返回值取决于之前 `AUTO_INCREMENT` 列的值，如果你之前没有插入一个列，那么返回值从 1 开始，如果你之前插入了一个列，那么返回值为 `AUTO_INCREMENT` 列的值增加 1。
 
 如果没有成功插入参数，`LAST_INSERT_ID()` 的值保持不变。
 

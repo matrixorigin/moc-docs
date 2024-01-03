@@ -8,7 +8,7 @@
 
 下面的示例是 **Maven** 构建系统的典型设置。
 
-### 1. 在 *Pom.xml* 中添加 *MyBatis-Spring-Boot-Starter*
+### 1。在 *Pom.xml* 中添加 *MyBatis-Spring-Boot-Starter*
 
 在 Spring Boot 上构建 MyBatis 应用程序，你需要将 *MyBatis-Spring-Boot-Starter* 模块添加到 *pom.xml* 中，*MyBatis-Spring-Boot-Starter* 模块则是在选择 Maven 项目时进行创建的。
 
@@ -20,7 +20,7 @@
 </dependency>
 ```
 
-### 2. 添加配置
+### 2。添加配置
 
 在 `application.properties` 中需要修改的参数如下，其余参数可以保存默认值：
 
@@ -54,7 +54,7 @@ Spring Data JPA 是一个强大的应用框架，它有助于减少样板代码�
 
 下面的示例是 **Maven** 构建系统的典型设置。
 
-### 1. 在 *Pom.xml* 中添加 *spring-boot-starter-data-jpa*
+### 1。在 *Pom.xml* 中添加 *spring-boot-starter-data-jpa*
 
 在 Spring Boot 上构建 Spring Data JPA 应用程序，你需要将 *spring-boot-starter-data-jpa* 模块添加到 *pom.xml* 中，*spring-boot-starter-data-jpa* 模块则是在选择 Maven 项目时进行创建的。
 
@@ -65,7 +65,7 @@ Spring Data JPA 是一个强大的应用框架，它有助于减少样板代码�
 </dependency>
 ```
 
-### 2. 添加配置
+### 2。添加配置
 
 在 `application.properties` 中需要修改的参数如下，其余参数可以保存默认值：
 
@@ -73,7 +73,7 @@ Spring Data JPA 是一个强大的应用框架，它有助于减少样板代码�
 - `spring.datasource.url`：JDBC 连接 URL 参数。
 - `spring.datasource.username`：数据库用户名。
 - `spring.datasource.password`：数据库密码。
-- `spring.jpa.properties.hibernate.dialect`：*SQL dialect*（即 SQL 方言）使 Hibernate 为所选数据库生成更好的 SQL。MatrixOne 当前仅支持 `org.hibernate.dialect.MySQLDialect`。
+- `spring.jpa.properties.hibernate.dialect`：*SQL dialect* (即 SQL 方言) 使 Hibernate 为所选数据库生成更好的 SQL。MatrixOne 当前仅支持 `org.hibernate.dialect.MySQLDialect`。
 
 - `spring.jpa.hibernate.ddl-auto`：`spring.jpa.hibernate.ddl-auto` 属性采用一个枚举，该枚举以更可控的方式控制模式生成。可能的选项和效果如下表所示。MatrixOne 当前仅支持 *none* 和 *validate*。
 

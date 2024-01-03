@@ -4,7 +4,7 @@
 
 ## **DDL - 数据定义语言**
 
-数据定义语言（Data Definition Language，DDL）是 DBMS 语言的一种，用于明确定义数据对象。在 MatrixOne 中，DDL 语句分为五个类别：
+数据定义语言 (Data Definition Language，DDL) 是 DBMS 语言的一种，用于明确定义数据对象。在 MatrixOne 中，DDL 语句分为五个类别：
 
 ### CREATE 语句，创建 MatrixOne 中各类对象
 
@@ -40,7 +40,7 @@
 
 ## **DML - 数据修改语言**
 
-数据修改语言（Data Manipulation Language, DML）用于数据库操作，包括对数据库中的对象和资料执行访问工作的编程语句。在 MatrixOne 中，DML 包含如下分类：
+数据修改语言 (Data Manipulation Language，DML) 用于数据库操作，包括对数据库中的对象和资料执行访问工作的编程语句。在 MatrixOne 中，DML 包含如下分类：
 
 ### INSERT 语句，用于在表中插入新行
 
@@ -66,20 +66,20 @@
 
 ## **DQL - Data Query Language**
 
-查询类语句（Data Query Language, DQL）用于检索 MatrixOne 中现有数据。以 SELECT 语句为核心，分为以下几类：
+查询类语句 (Data Query Language，DQL) 用于检索 MatrixOne 中现有数据。以 SELECT 语句为核心，分为以下几类：
 
 ### 单表查询，查询层级只有一层，只涉及到单表的查询
 
 - [SELECT](Data-Query-Language/select.md)
 
-### 子查询（Subquery），也称为嵌套查询或子选择，是 SELECT 子查询语句嵌入在另一个 SQL 查询的查询方式，分为关联子查询与非关联子查询
+### 子查询 (Subquery)，也称为嵌套查询或子选择，是 SELECT 子查询语句嵌入在另一个 SQL 查询的查询方式，分为关联子查询与非关联子查询
 
 - [SUBQUERY with ANY or SOME](Data-Query-Language/subqueries/subquery-with-any-some.md)
 - [SUBQUERY with ALL](Data-Query-Language/subqueries/subquery-with-all.md)
 - [SUBQUERY with EXISTS](Data-Query-Language/subqueries/subquery-with-exists.md)
 - [SUBQUERY with IN](Data-Query-Language/subqueries/subquery-with-in.md)
 
-### 关联查询（Join Query），将多表之间的结果进行关联并输出结果的查询方式
+### 关联查询 (Join Query)，将多表之间的结果进行关联并输出结果的查询方式
 
 - [INNER JOIN](Data-Query-Language/join/inner-join.md)
 - [LEFT JOIN](Data-Query-Language/join/left-join.md)
@@ -88,11 +88,11 @@
 - [OUTER JOIN](Data-Query-Language/join/outer-join.md)
 - [NATURAL JOIN](Data-Query-Language/join/natural-join.md)
 
-### 公用表达式（Common Table Expressions），将某些查询作为是临时结果，可以在其他 SQL 中引用，如 SELECT, INSERT, UPDATE 和 DELETE，其仅存在于查询执行期间
+### 公用表达式 (Common Table Expressions)，将某些查询作为是临时结果，可以在其他 SQL 中引用，如 SELECT，INSERT，UPDATE 和 DELETE，其仅存在于查询执行期间
 
 - [With CTE](Data-Query-Language/with-cte.md)
 
-### 组合查询，将多个查询的结果进行组合，以集合的方式进行呈现，分为并集（UNION）、交集（INTERSECT）、差集（MINUS）
+### 组合查询，将多个查询的结果进行组合，以集合的方式进行呈现，分为并集 (UNION)、交集 (INTERSECT)、差集 (MINUS)
 
 - [UNION](Data-Query-Language/union.md)
 - [INTERSECT](Data-Query-Language/intersect.md)
@@ -143,7 +143,7 @@ START TRANSACTION;
 
 ## **DCL - 数据控制语言**
 
-数据控制语言（Data Control Language, DCL）包括资源的分配与回收、用户与角色的创建与删除、权限的授权与回收，分为如下分类：
+数据控制语言 (Data Control Language，DCL) 包括资源的分配与回收、用户与角色的创建与删除、权限的授权与回收，分为如下分类：
 
 ### CREATE 语句，用于创建用户与角色
 

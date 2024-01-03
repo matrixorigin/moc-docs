@@ -25,7 +25,7 @@ INTO TABLE tbl_name;
 
 ### 示例：使用 `LOAD DATA INLINE` 导入数据
 
-1. 在执行 `LOAD DATA INLINE` 之前，需要提前在数据库中创建完成数据表 `user`:
+1. 在执行 `LOAD DATA INLINE` 之前，需要提前在数据库中创建完成数据表 `user`：
 
     ```mysql
 

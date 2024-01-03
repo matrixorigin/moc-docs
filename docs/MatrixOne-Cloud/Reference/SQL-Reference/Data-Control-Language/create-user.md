@@ -6,7 +6,7 @@
 
 使用 `CREATE USER`，你需要拥有 `CREATE USER` 权限。
 
-- 默认拥有 `CREATE USER` 权限的角色为 MOADMIN 或 ACCOUNTADMIN：集群管理员（默认账户为 root）和由集群管理员创建的租户管理员默认拥有权限。
+- 默认拥有 `CREATE USER` 权限的角色为 MOADMIN 或 ACCOUNTADMIN：集群管理员 (默认账户为 root) 和由集群管理员创建的租户管理员默认拥有权限。
 
 ## **语法结构**
 
@@ -34,7 +34,7 @@ create user user_name identified by 'password';
 
 `CREATE USER` 允许这些 `auth_option`：
 
-- 'auth_string'：在 MatrixOne Cloud 中，'auth_string' 为密码，即将密码存储在 *mo_user* 系统表的帐户行中。
+- ‘auth_string’：在 MatrixOne Cloud 中，‘auth_string’ 为密码，即将密码存储在 *mo_user* 系统表的帐户行中。
 
 #### DEFAULT ROLE
 

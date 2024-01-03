@@ -5,9 +5,9 @@
 ## 显式事务规则
 
 - 显式事务是指以 `BEGIN...END` 或 `START TRANSACTION...COMMIT` 或 `ROLLBACK` 作为起始结束。
-- 在显式事务中，DML（Data Manipulation Language，数据操纵语言）与 DDL（Data Definition Language，数据库定义语言）可以同时存在，支持除数据库与序列之外的所有对象类型的 DDL。
+- 在显式事务中，DML (Data Manipulation Language，数据操纵语言) 与 DDL (Data Definition Language，数据库定义语言) 可以同时存在，支持除数据库与序列之外的所有对象类型的 DDL。
 - 显式事务中，无法嵌套其他显式事务，例如 `START TRANSACTIONS` 之后再遇到 `START TRANSACTIONS`，两个 `START TRANSACTIONS` 之间的所有语句都会强制提交，无论 `AUTOCOMMIT` 的值是 1 或 0。
-- 显式事务中，不能存在 `SET` 命令与管理类命令（`CREATE USER/ROLE` 或 `GRANT`），只能包含 DML 与 DDL。
+- 显式事务中，不能存在 `SET` 命令与管理类命令 (`CREATE USER/ROLE` 或 `GRANT`)，只能包含 DML 与 DDL。
 - 显式事务中，如果在未发生显式提交或回滚而开启一个新事务而发生写写冲突，之前未提交的事务将会回滚并报错。
 
 ## 与 MySQL 显式事务的区别
@@ -63,7 +63,7 @@ mysql> SELECT * FROM Accounts;
 
 MatrixOne Cloud 支持跨库事务行为，这里将以一个简单的示例进行说明。
 
-首先，让我们创建两个数据库（db1 和 db2）以及它们各自的表（table1 和 table2）：
+首先，让我们创建两个数据库 (db1 和 db2) 以及它们各自的表 (table1 和 table2)：
 
 ```sql
 -- 创建 db1 数据库

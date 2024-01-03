@@ -1,6 +1,6 @@
 # 使用 JDBC 连接
 
-在 Java 中，我们可以通过 Java 代码使用 JDBC 连接器（Java Database Connectivity）连接到 MatrixOne。JDBC 是用于数据库连接的标准 API 之一，使用它我们可以轻松地运行 SQL 语句并且从数据库中获取数据。
+在 Java 中，我们可以通过 Java 代码使用 JDBC 连接器 (Java Database Connectivity) 连接到 MatrixOne。JDBC 是用于数据库连接的标准 API 之一，使用它我们可以轻松地运行 SQL 语句并且从数据库中获取数据。
 
 ## 开始前准备
 
@@ -41,7 +41,7 @@
 
 5. 修改 **src/main/java/org/example/Main.java** 中的默认 Java 源代码。如下面的代码示例中所示，这段代码使用连接地址和凭据创建连接。连接到 MatrixOne 后，你可以使用 Java 语言对 MatrixOne 数据库和表进行操作。
 
-    有关如何使用 JDBC 在 MatrixOne 中开发 CRUD（创建、读取、更新、删除）应用程序的完整示例，参考 [Java CRUD 示例](../../Tutorial/develop-java-crud-demo.md)。
+    有关如何使用 JDBC 在 MatrixOne 中开发 CRUD (创建、读取、更新、删除) 应用程序的完整示例，参考 [Java CRUD 示例](../../Tutorial/develop-java-crud-demo.md)。
 
     ```java
     package org.example;

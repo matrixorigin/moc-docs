@@ -1,6 +1,6 @@
 # SQLAlchemy 基础示例
 
-本篇文档将指导你如何使用 **Python** 和 **SQLAlchemy** 构建一个简单的应用程序，并实现 CRUD（创建、读取、更新、删除）功能。
+本篇文档将指导你如何使用 **Python** 和 **SQLAlchemy** 构建一个简单的应用程序，并实现 CRUD (创建、读取、更新、删除) 功能。
 
 **SQLAlchemy** 是 Python 语言中最流行的 ORM 工具之一。
 
@@ -52,11 +52,11 @@
     pip3 install faker -i https://pypi.tuna.tsinghua.edu.cn/simple
     ```
 
-你可以参考 [Python 连接 MatrixOne 服务](../connect-mo/python-connect-to-matrixone.md)了解如何通过 `SQLAlchemy` 连接到 MatrixOne，本篇文档将指导你如何实现 CRUD（创建、读取、更新、删除)。
+你可以参考 [Python 连接 MatrixOne 服务](../connect-mo/python-connect-to-matrixone.md)了解如何通过 `SQLAlchemy` 连接到 MatrixOne，本篇文档将指导你如何实现 CRUD (创建、读取、更新、删除)。
 
 ## 新建表
 
-作为对象关系映射器（ORM）工具，SQLAlchemy 允许开发人员创建 Python 类来映射关系数据库中的表。
+作为对象关系映射器 (ORM) 工具，SQLAlchemy 允许开发人员创建 Python 类来映射关系数据库中的表。
 
 在下面的代码示例中，将创建一个 `Customer` 类，它定义的 `Customer` 的代码相当于一条 SQL 语句，它表示 MatrixOne 中的命名为 `Customer` 的表：
 

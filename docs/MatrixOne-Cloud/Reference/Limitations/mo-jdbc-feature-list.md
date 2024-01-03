@@ -2,14 +2,14 @@
 
 使用 JDBC 开发应用，MatrixOne 支持以下类和对象：
 
-## 1. Connection（类）：获取数据库连接对象
+## 1。Connection (类)：获取数据库连接对象
 
 ### 类中的方法
 
 1. 获取执行 Sql 对象 Statement  
 
-    - Statement createStatement();  
-    - Statement prepareStatement(String sql);  
+    - Statement createStatement()；  
+    - Statement prepareStatement(String sql)；  
 
 2. 管理事务
 
@@ -72,7 +72,7 @@
 | setNetworkTimeout(Executor executor, int milliseconds) | Y |
 | getNetworkTimeout() | Y |
 
-## 2. Statement 类中的方法
+## 2。Statement 类中的方法
 
 |Statement 类中的方法 | 支持（Y）/不支持（N） |
 |---|---|
@@ -119,7 +119,7 @@
 | closeOnCompletion() | Y |
 | isCloseOnCompletion() | Y |
 
-## 3. ResultSet interface 中的方法
+## 3。ResultSet interface 中的方法
 
 |ResultSet 类中的方法 | 支持（Y）/不支持（N）|
 |---|---|
@@ -173,7 +173,7 @@
 | update()(一连串数据类型) | Y |
 | updateNull() | Y |
 
-## 4. ResultSetMetaData 中的方法
+## 4。ResultSetMetaData 中的方法
 
 | ResultSetMetaData 类中的方法 | 支持（Y）/不支持（N） |
 |---|---|

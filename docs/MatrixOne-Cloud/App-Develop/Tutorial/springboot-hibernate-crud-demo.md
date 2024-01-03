@@ -1,24 +1,24 @@
 # SpringBoot 和 JPA 基础示例
 
-本篇文档将指导你如何使用 **SpringBoot**、**Spring Data JPA** 和 **Intellij IDEA** 构建一个简单的应用程序，并实现 CRUD（创建、读取、更新、删除）功能。
+本篇文档将指导你如何使用 **SpringBoot**、**Spring Data JPA** 和 **Intellij IDEA** 构建一个简单的应用程序，并实现 CRUD (创建、读取、更新、删除) 功能。
 
 ## 开始之前
 
 本篇教程涉及到的软件介绍如下：
 
-* Spring Data JPA：JPA（Java Persistence API，Java 持久层 API）是一种规范，是 JDK 5.0 注解或 XML 描述对象与关系表的映射关系，并将运行期的实体对象持久化到数据库中。Spring Data JPA 是一个 Java 对象映射关系的解决方案的 ORM（Object-Relational Mapping）框架，是一个将面向对象的域模型映射到关系数据库的开源框架。
+* Spring Data JPA：JPA (Java Persistence API，Java 持久层 API) 是一种规范，是 JDK 5.0 注解或 XML 描述对象与关系表的映射关系，并将运行期的实体对象持久化到数据库中。Spring Data JPA 是一个 Java 对象映射关系的解决方案的 ORM (Object-Relational Mapping) 框架，是一个将面向对象的域模型映射到关系数据库的开源框架。
 
-* Intellij IDEA：IntelliJ IDEA 是一种商业化销售的 Java 集成开发环境（Integrated Development Environment，IDE）工具软件。它所拥有诸多插件，可以提高我们的工作效率。
+* Intellij IDEA：IntelliJ IDEA 是一种商业化销售的 Java 集成开发环境 (Integrated Development Environment，IDE) 工具软件。它所拥有诸多插件，可以提高我们的工作效率。
 
 * Maven：Maven 是 Java 中功能强大的项目管理工具，可以根据 *pom.xml* 文件中的配置自动下载和导入 *Jar* 文件。这个特性减少了不同版本 Jar 文件之间的冲突。
 
 * Spring：Spring 是 Java 中最流行的框架之一，越来越多的企业使用 Spring 框架来构建他们的项目。Spring Boot 构建在传统的 Spring 框架之上。因此，它提供了 Spring 的所有特性，而且比 Spring 更易用。
 
-* Postman: Postman 是一个用于 API 测试的应用程序。它是一个 HTTP 客户端，利用图形用户界面测试 HTTP 请求，以获得需要进行验证的不同类型的响应。
+* Postman：Postman 是一个用于 API 测试的应用程序。它是一个 HTTP 客户端，利用图形用户界面测试 HTTP 请求，以获得需要进行验证的不同类型的响应。
 
 ## 配置环境
 
-### 1. 安装构建 MatrixOne
+### 1。安装构建 MatrixOne
 
 1. [创建实例](../../Instance-Mgmt/create-instance.md)。
 
@@ -28,7 +28,7 @@
 mysql> create database test;
 ```
 
-### 2. 使用 IntelliJ IDEA 创建一个新的 Spring Boot 项目
+### 2。使用 IntelliJ IDEA 创建一个新的 Spring Boot 项目
 
 选择 **Spring Initializer**，按需命名项目名称。
 
@@ -143,7 +143,7 @@ mysql> create database test;
 </project>
 ```
 
-### 3. 修改 *application.properties* 文件
+### 3。修改 *application.properties* 文件
 
 进入到 **src>main>resources** 文件目录下，配置 *application.properties* 文件，完成 MatrixOne 连接。
 
@@ -173,7 +173,7 @@ spring.jpa.properties.hibernate.format_sql = true
 spring.jpa.hibernate.ddl-auto = validate
 ```
 
-### 4. 在 MatrixOne 中新建表并插入数据
+### 4。在 MatrixOne 中新建表并插入数据
 
 使用 MySQL 客户端连接到 MatrixOne 并执行以下 SQL 语句。你可以将这些 SQL 语句保存在 */resource/database/* 目录下的 *book.sql* 中。
 
@@ -212,7 +212,7 @@ touch controller/BookStoreController.java dao/BookStoreDAO.java dao/IBookStoreDA
 
 ![image-20221027105233860](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/hibernate/image-20221027105233860.png)
 
-### 1. controller/BookStoreController.java
+### 1。controller/BookStoreController.java
 
 ```java
 package com.example.jpademo.controller;
@@ -276,7 +276,7 @@ public class BookStoreController {
 }
 ```
 
-### 2. dao/BooStoreDAO.java
+### 2。dao/BooStoreDAO.java
 
 ```java
 package com.example.jpademo.dao;
@@ -383,7 +383,7 @@ public class BookStoreDAO implements IBookStoreDAO {
 }
 ```
 
-### 3. dao/IBookStoreDAO.java
+### 3。dao/IBookStoreDAO.java
 
 ```
 package com.example.jpademo.dao;
@@ -402,7 +402,7 @@ public interface IBookStoreDAO {
 }
 ```
 
-### 4. entity/Book.java
+### 4。entity/Book.java
 
 ```java
 package com.example.jpademo.entity;
@@ -498,7 +498,7 @@ public class Book implements Serializable {
 
 ```
 
-### 5. services/BookStoreService.java
+### 5。services/BookStoreService.java
 
 ```java
 package com.example.jpademo.services;
@@ -545,7 +545,7 @@ public class BookStoreService implements IBookStoreService {
 
 ```
 
-### 6. services/IBookStoreService.java
+### 6。services/IBookStoreService.java
 
 ```java
 package com.example.jpademo.services;
@@ -565,7 +565,7 @@ public interface IBookStoreService {
 }
 ```
 
-### 7. JpademoApplication
+### 7。JpademoApplication
 
 ```java
 package com.example.jpademo;
@@ -618,7 +618,7 @@ public class JpademoApplication {
 2022-10-27 11:16:40.249  INFO 93488 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 66 ms
 ```
 
-### 1. 获取 Book 列表，使用 GET 请求调用以下接口
+### 1。获取 Book 列表，使用 GET 请求调用以下接口
 
 ```
 http://localhost:8080/bookservice/books
@@ -626,7 +626,7 @@ http://localhost:8080/bookservice/books
 
 ![image-20221027112426189](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/hibernate/image-20221027112426189.png)
 
-### 2. 创建一个新 Book，使用 POST 请求调用以下接口
+### 2。创建一个新 Book，使用 POST 请求调用以下接口
 
 ```
 http://localhost:8080/bookservice/books
@@ -647,7 +647,7 @@ http://localhost:8080/bookservice/books
 
 ![image-20221027115733788](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/hibernate/image-20221027115733788.png)
 
-### 3. 如需获取特定 Book，使用 GET 请求调用以下接口
+### 3。如需获取特定 Book，使用 GET 请求调用以下接口
 
 ```
   http://localhost:8080/bookservice/books/<id>
@@ -655,7 +655,7 @@ http://localhost:8080/bookservice/books
 
 ![image-20221027115844378](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/hibernate/image-20221027115844378.png)
 
-### 4. 在数据库中升级 Book，使用 PUT 请求调用以下接口
+### 4。在数据库中升级 Book，使用 PUT 请求调用以下接口
 
 ```
  http://localhost:8080/bookservice/books/<id>
@@ -678,7 +678,7 @@ http://localhost:8080/bookservice/books
 
 ![image-20221027120144112](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/hibernate/image-20221027120144112.png)
 
-### 5. 如需从数据库中删除特定的 Book，使用 DELETE 请求调用以下接口
+### 5。如需从数据库中删除特定的 Book，使用 DELETE 请求调用以下接口
 
 ```
   http://localhost:8080/bookservice/books/<id>

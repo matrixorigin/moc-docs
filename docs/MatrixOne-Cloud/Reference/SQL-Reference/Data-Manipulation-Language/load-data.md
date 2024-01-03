@@ -51,7 +51,7 @@ LOAD DATA INFILE '/tmp/test.txt' INTO TABLE table1 IGNORE 1 LINES;
 
 对于 `LOAD DATA` 和 `SELECT ... INTO OUTFILE` 语句，`FIELDS` 和 `LINES` 子句的语法是相同的。这两个子句都是可选的，但如果两者都指定，则 `FIELDS` 必须在 `LINES` 之前。
 
-如果指定 `FIELDS` 子句，那么 `FIELDS` 的每个子句（`TERMINATED BY`、`[OPTIONALLY] ENCLOSED BY`）也是可选的，但是你必须至少指定其中一个。
+如果指定 `FIELDS` 子句，那么 `FIELDS` 的每个子句 (`TERMINATED BY`、`[OPTIONALLY] ENCLOSED BY`) 也是可选的，但是你必须至少指定其中一个。
 
 `LOAD DATA` 也支持使用十六进制 `ASCII` 字符表达式或二进制 `ASCII` 字符表达式作为 `FIELDS ENCLOSED BY` 和 `FIELDS TERMINATED BY` 的参数。
 
@@ -119,7 +119,7 @@ LOAD DATA LOCAL INFILE 'data.txt' INTO TABLE table1
 
 **LINE STARTING BY**
 
-如果所有输入行都有一个你想忽略的公共前缀，你可以使用 `LINES STARTING BY` 'prefix_string' 来忽略前缀和前缀之前的任何内容。
+如果所有输入行都有一个你想忽略的公共前缀，你可以使用 `LINES STARTING BY` ‘prefix_string’ 来忽略前缀和前缀之前的任何内容。
 
 如果一行不包含前缀，则跳过整行。如下语句所示：
 
@@ -136,7 +136,7 @@ something xxx"def",2
 "ghi",3
 ```
 
-则输出的结果行是 ("abc"，1) 和 ("def"，2)。文件中的第三行由于没有前缀，则被忽略。
+则输出的结果行是 (“abc”，1) 和 (“def”，2)。文件中的第三行由于没有前缀，则被忽略。
 
 ### SET
 
@@ -204,19 +204,19 @@ load data local infile 'file_name' into table tbl_name FIELDS TERMINATED BY '|' 
 !!! note
     `[PARALLEL {'TRUE' | 'FALSE'}]` 内字段，当前仅支持 `TRUE` 或 `FALSE`，且大小写不敏感。
 
-**Note:** `LOAD` 语句中如果不加 `PARALLEL` 字段，对于 *CSV* 文件，是默认关闭并行加载；对于 *JSONLines* 文件，默认开启并行加载。如果 *CSV* 文件中有行结束符，比如 '\n'，那么有可能会导致文件加载时数据出错。如果文件过大，建议从换行符为起止点手动拆分文件后再开启并行加载。
+**Note：**`LOAD` 语句中如果不加 `PARALLEL` 字段，对于 *CSV* 文件，是默认关闭并行加载；对于 *JSONLines* 文件，默认开启并行加载。如果 *CSV* 文件中有行结束符，比如 ‘\n’，那么有可能会导致文件加载时数据出错。如果文件过大，建议从换行符为起止点手动拆分文件后再开启并行加载。
 
 ## 支持的文件格式
 
 在 MatrixOne Cloud 当前版本中，`LOAD DATA` 支持 *CSV* 格式和 *JSONLines* 格式文件。
 
-有关导入这两种格式的文档，参见[导入*. csv* 格式数据](../../../App-Develop/import-data/bulk-load/load-csv.md)和[导入 JSONLines 数据](../../../App-Develop/import-data/bulk-load/load-jsonline.md)。
+有关导入这两种格式的文档，参见[导入*。csv* 格式数据](../../../App-Develop/import-data/bulk-load/load-csv.md)和[导入 JSONLines 数据](../../../App-Develop/import-data/bulk-load/load-jsonline.md)。
 
 ### *CSV* 格式标准说明
 
 MatrixOne Cloud 加载 *CSV* 格式符合 RFC4180 标准，规定 *CSV* 格式如下：
 
-1. 每条记录位于单独的一行，由换行符（CRLF）分隔：
+1. 每条记录位于单独的一行，由换行符 (CRLF) 分隔：
 
     ```
     aaa,bbb,ccc CRLF
@@ -232,7 +232,7 @@ MatrixOne Cloud 加载 *CSV* 格式符合 RFC4180 标准，规定 *CSV* 格式�
     | zzz     | yyy     | xxx     |
     +---------+---------+---------+
 
-2. 文件中最后一条记录可以有结束换行符，也可以无结束换行符（CRLF）：
+2. 文件中最后一条记录可以有结束换行符，也可以无结束换行符 (CRLF)：
 
     ```
     aaa,bbb,ccc CRLF
@@ -320,7 +320,7 @@ MatrixOne Cloud 加载 *CSV* 格式符合 RFC4180 标准，规定 *CSV* 格式�
     | zzz     | yyy     | xxx     |
     +---------+---------+---------+
 
-6. 包含换行符（CRLF）、双引号和逗号的字段应该用双引号引起来。例如：
+6. 包含换行符 (CRLF)、双引号和逗号的字段应该用双引号引起来。例如：
 
     ```
     "aaa","b CRLF
@@ -472,7 +472,7 @@ mysql> select * from t1;
 
 可以看到，查询结果忽略了前 10 行，并且忽略了公共前缀 aa。
 
-有关如何导入 *CSV* 格式文件的详细步骤，参见[导入*. csv* 格式数据](../../../App-Develop/import-data/bulk-load/load-csv.md)。
+有关如何导入 *CSV* 格式文件的详细步骤，参见[导入*。csv* 格式数据](../../../App-Develop/import-data/bulk-load/load-csv.md)。
 
 ### 示例 2：LOAD JSONLines
 
@@ -543,7 +543,7 @@ mysql> select * from t1;
 
 1. `REPLACE` 和 `IGNORE` 修饰符用来解决唯一索引的冲突：`REPLACE` 表示若表中已经存在，则用新的数据替换掉旧的数据；`IGNORE` 则表示保留旧的数据，忽略掉新数据。这两个修饰符在 MatrixOne Cloud 中尚不支持。
 2. MatrixOne Cloud 当前部分支持 `SET`，仅支持 `SET columns_name=nullif(col_name,expr2)`。
-3. 开启并行加载操作时必须要保证文件中每行数据中不包含指定的行结束符，比如 '\n'，否则有可能会导致文件加载时数据出错。
+3. 开启并行加载操作时必须要保证文件中每行数据中不包含指定的行结束符，比如 ‘\n’，否则有可能会导致文件加载时数据出错。
 4. 文件的并行加载要求文件必须是非压缩格式，暂不支持并行加载压缩格式的文件。
 5. 如果你需要用 `LOAD DATA LOCAL` 进行本地加载，则需要使用命令行连接 MatrixOne Cloud 服务主机：`mysql -h <mo-host -ip> -P 6001 -uroot -p111 --local-infile`。
 6. MatrixOne Cloud 当前暂不支持 `ESCAPED BY`，写入或读取特殊字符与 MySQL 存在一定的差异。

@@ -8,7 +8,7 @@
 SELECT * FROM t1 WHERE column1 = (SELECT column1 FROM t2);
 ```
 
-在示例中，`SELECT * FROM t1 WHERE column1` 是外部查询（或外部语句），`(SELECT column1 FROM t2)` 是子查询。子查询语句必须写在括号内，然后嵌套在外部查询语句中，也可以嵌套在其他子查询语句中，形成多层嵌套。
+在示例中，`SELECT * FROM t1 WHERE column1` 是外部查询 (或外部语句)，`(SELECT column1 FROM t2)` 是子查询。子查询语句必须写在括号内，然后嵌套在外部查询语句中，也可以嵌套在其他子查询语句中，形成多层嵌套。
 
 **子查询的主要优点**：
 

@@ -84,7 +84,7 @@ public class JDBCUtils {
 
 我们需要在 *src* 目录下创建相应的 java 源代码文件：`Create.java`、`Insert.java`、`Update.java`、`Select.java`，并将下面的代码对应放在这些文件中。
 
-#### 创建（`Create.java`)
+#### 创建 (`Create.java`)
 
 ```java
 import java.sql.Connection;
@@ -141,7 +141,7 @@ PRIMARY KEY (`id`)
 1 row in set (0.01 sec)
 ```
 
-#### 插入（`Insert.java`）
+#### 插入 (`Insert.java`)
 
 ```java
 import java.sql.Connection;
@@ -197,7 +197,7 @@ mysql> select * from student;
 1 row in set (0.01 sec)
 ```
 
-#### 更新（`Update.java`）
+#### 更新 (`Update.java`)
 
 ```java
 import java.sql.Connection;
@@ -247,7 +247,7 @@ mysql> select * from student;
 1 row in set (0.00 sec)
 ```
 
-#### 查询（`Select.java`）
+#### 查询 (`Select.java`)
 
 ```java
 import java.sql.Connection;
@@ -293,7 +293,7 @@ public class Select {
 
 ![image-20220927113440917](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/reference/jdbc_select.png)
 
-#### 删除（`Delete.java`）
+#### 删除 (`Delete.java`)
 
 ```java
 package org.example;

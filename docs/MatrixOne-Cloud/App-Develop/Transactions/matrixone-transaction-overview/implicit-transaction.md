@@ -20,7 +20,7 @@
 
 ## MatrixOne Cloud 与 MySQL 隐式事务的区别
 
-在 MatrixOne Cloud 中，如果开启了隐式事务（`SET AUTOCOMMIT=0`），则所有操作都需要手动执行 `COMMIT` 或 `ROLLBACK` 来结束事务。相比之下，MySQL 在遇到 DDL 或类似 `SET` 语句时会自动提交。
+在 MatrixOne Cloud 中，如果开启了隐式事务 (`SET AUTOCOMMIT=0`)，则所有操作都需要手动执行 `COMMIT` 或 `ROLLBACK` 来结束事务。相比之下，MySQL 在遇到 DDL 或类似 `SET` 语句时会自动提交。
 
 ### MySQL 隐式事务行为
 

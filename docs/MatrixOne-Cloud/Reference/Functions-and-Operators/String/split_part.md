@@ -4,7 +4,7 @@
 
 `SPLIT_PART()` 用于在给定的分隔符基础上将一个字符串分解成多个部分，并返回指定的部分。
 
-如果指定的部分（由 `unsigned_integer` 参数指定）超出了实际存在的部分数量，`SPLIT_PART()` 将返回 `NULL`。
+如果指定的部分 (由 `unsigned_integer` 参数指定) 超出了实际存在的部分数量，`SPLIT_PART()` 将返回 `NULL`。
 
 `SPLIT_PART()` 只会从左到右开始计数部分，如果 `unsigned_integer` 为负数，将会报错。
 

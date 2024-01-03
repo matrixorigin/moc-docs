@@ -72,4 +72,4 @@ mysql> SELECT * FROM Users  ORDER BY RAND() LIMIT 1;
 
 ## **限制**
 
-MatrixOne Cloud 暂不支持指定 `RAND(seed)` 函数的种子值（即 `seed` 参数）。
+MatrixOne Cloud 暂不支持指定 `RAND(seed)` 函数的种子值 (即 `seed` 参数)。

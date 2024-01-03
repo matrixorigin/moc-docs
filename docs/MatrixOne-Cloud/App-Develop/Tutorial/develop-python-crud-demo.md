@@ -1,6 +1,6 @@
 # Python 基础示例
 
-本篇文档将指导你如何使用 **Python** 构建一个简单的应用程序，并实现 CRUD（创建、读取、更新、删除）功能。
+本篇文档将指导你如何使用 **Python** 构建一个简单的应用程序，并实现 CRUD (创建、读取、更新、删除) 功能。
 
 ## 开始前准备
 
@@ -34,7 +34,7 @@
     pip3 install cryptography -i https://pypi.tuna.tsinghua.edu.cn/simple
     ```
 
-你可以参考 [Python 连接 MatrixOne 服务](../connect-mo/python-connect-to-matrixone.md)了解如何通过 `pymysql` 连接到 MatrixOne，本篇文档将指导你如何实现 CRUD（创建、读取、更新、删除)。
+你可以参考 [Python 连接 MatrixOne 服务](../connect-mo/python-connect-to-matrixone.md)了解如何通过 `pymysql` 连接到 MatrixOne，本篇文档将指导你如何实现 CRUD (创建、读取、更新、删除)。
 
 ## 新建表
 
@@ -240,7 +240,7 @@ with SQL_CONNECTION.cursor() as cursor:
 
 ```
 
-执行下面代码更新 id 为“1”的记录：
+执行下面代码更新 id 为 “1” 的记录：
 
 ```
 > python3 update.py
@@ -297,7 +297,7 @@ with SQL_CONNECTION.cursor() as cursor:
         SQL_CONNECTION.close()
 ```
 
-执行下面代码删除 id 为“1”的记录：
+执行下面代码删除 id 为 “1” 的记录：
 
 ```
 > python3 delete.py

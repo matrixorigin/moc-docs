@@ -15,14 +15,14 @@ MatrixOne 支持使用 `LOAD DATA` 命令从本地文件系统或 *S3 对象存�
 
 ### 从不同存储位置进行导入
 
-根据*数据存储位置不同*的情况，MatrixOne 支持使用 `LOAD DATA` 命令从*本地进行导入*和*从对象存储服务（Simple Storage Service, S3) 导入*。
+根据*数据存储位置不同*的情况，MatrixOne 支持使用 `LOAD DATA` 命令从*本地进行导入*和*从对象存储服务 (Simple Storage Service，S3) 导入*。
 
 - 从本地导入数据的方式，参考[插入 csv 文件](load-csv.md)或[插入 jsonlines 文件](load-jsonline.md)。
 - 从 S3 导入数据的方式，参考[从对象存储导入文件](load-s3.md)。
 
 ## `SOURCE`
 
-MatrixOne 支持使用 `SOURCE` 命令从外部 SQL 脚本文件执行 SQL 语句导入整个数据库结构（包括表结构和数据）。`SOURCE` 命令在处理大量数据时可能没有 `LOAD DATA` 命令性能高，因为它需要解析和执行每个 SQL 语句。
+MatrixOne 支持使用 `SOURCE` 命令从外部 SQL 脚本文件执行 SQL 语句导入整个数据库结构 (包括表结构和数据)。`SOURCE` 命令在处理大量数据时可能没有 `LOAD DATA` 命令性能高，因为它需要解析和执行每个 SQL 语句。
 
 - [Source 插入](using-source.md)
 

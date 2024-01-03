@@ -1,6 +1,6 @@
 # SpringBoot 和 MyBatis 基础示例
 
-本篇文档将指导你如何使用 **SpringBoot**、**Mybatis** 和 **Intellij IDEA** 构建一个简单的应用程序，并实现 CRUD（创建、读取、更新、删除）功能。
+本篇文档将指导你如何使用 **SpringBoot**、**Mybatis** 和 **Intellij IDEA** 构建一个简单的应用程序，并实现 CRUD (创建、读取、更新、删除) 功能。
 
 ## 开始之前
 
@@ -8,7 +8,7 @@
 
 * MyBatis：MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过程以及高级映射。我们只需要关注项目中的 SQL 本身。
 
-* Intellij IDEA：IntelliJ IDEA 是一种商业化销售的 Java 集成开发环境（Integrated Development Environment，IDE）工具软件。它所拥有的诸多插件，可以提高我们的工作效率。
+* Intellij IDEA：IntelliJ IDEA 是一种商业化销售的 Java 集成开发环境 (Integrated Development Environment，IDE) 工具软件。它所拥有的诸多插件，可以提高我们的工作效率。
 
 * Maven：Maven 是 Java 中功能强大的项目管理工具，可以根据 *pom.xml* 文件中的配置自动下载和导入 *Jar* 文件。这个特性减少了不同版本 Jar 文件之间的冲突。
 
@@ -16,7 +16,7 @@
 
 ## 配置环境
 
-### 1. 安装构建 MatrixOne
+### 1。安装构建 MatrixOne
 
 1. [创建实例](../../Instance-Mgmt/create-instance.md)。
 
@@ -26,7 +26,7 @@
 mysql> create database test;
 ```
 
-### 2. 使用 IntelliJ IDEA 创建一个新的 Spring Boot 项目
+### 2。使用 IntelliJ IDEA 创建一个新的 Spring Boot 项目
 
 选择 **Spring Initializer**，按需命名项目名称。
 
@@ -143,7 +143,7 @@ mysql> create database test;
 
 ```
 
-### 3. 修改 *application.properties* 文件
+### 3。修改 *application.properties* 文件
 
 进入到 **src>main>resources** 文件目录下，配置 *application.properties* 文件，完成 MatrixOne 连接。
 
@@ -189,7 +189,7 @@ touch java/com/example/mybatisdemo/controller/UserController.java  java/com/exam
 
 ![image-20221026155656694](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/tutorial/mybatis/image-20221026155656694.png)
 
-### 1. controller/UserController.java
+### 1。controller/UserController.java
 
 ```java
 package com.example.mybatisdemo.controller;
@@ -239,7 +239,7 @@ public class UserController {
 }
 ```
 
-### 2. entity/User.java
+### 2。entity/User.java
 
 ```java
 package com.example.mybatisdemo.entity;
@@ -304,7 +304,7 @@ public class User {
 }
 ```
 
-### 3. mapper/UserMapper.java
+### 3。mapper/UserMapper.java
 
 ```java
 package com.example.mybatisdemo.mapper;
@@ -329,7 +329,7 @@ public interface UserMapper {
 }
 ```
 
-### 4. service/UserService.java
+### 4。service/UserService.java
 
 ```java
 package com.example.mybatisdemo.service;
@@ -387,7 +387,7 @@ public class UserService {
 };
 ```
 
-### 5. MyBatisDemoApplication.java
+### 5。MyBatisDemoApplication.java
 
 ```java
 package com.example.mybatisdemo;
@@ -405,7 +405,7 @@ public class MyBatisDemoApplication {
 }
 ```
 
-### 6. mapping/UserMapper.xml
+### 6。mapping/UserMapper.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -508,7 +508,7 @@ public class MyBatisDemoApplication {
 2022-10-26 16:13:26.272  INFO 60253 --- [           main] c.e.mybatisdemo.MyBatisDemoApplication   : Started MyBatisDemoApplication in 2.669 seconds (JVM running for 3.544)
 ```
 
-### 1. 测试新建表
+### 1。测试新建表
 
 打开你的的浏览器并输入网址：[http://localhost:8080/test/create](http://localhost:8080/test/create)
 
@@ -545,7 +545,7 @@ PRIMARY KEY (`id`)
 1 row in set (0.01 sec)
 ```
 
-### 2. 测试增加用户
+### 2。测试增加用户
 
 打开你的浏览器并输入网址：[http://localhost:8080/test/add?username=tom&password=123456&address=shanghai](http://localhost:8080/test/add?username=tom&password=123456&address=shanghai)
 
@@ -563,7 +563,7 @@ mysql> select * from user;
 1 row in set (0.00 sec)
 ```
 
-### 3. 测试查询用户
+### 3。测试查询用户
 
 打开你的浏览器并输入网址：[http://localhost:8080/test/selectUserByid?id=1](http://localhost:8080/test/selectUserByid?id=1)
 
@@ -571,7 +571,7 @@ mysql> select * from user;
 
 你可以直接从浏览器中获取查询结果。
 
-### 4. 测试更新用户
+### 4。测试更新用户
 
 打开你的浏览器并输入网址：[http://localhost:8080/test/update?id=1&username=tom&password=654321&address=beijing](http://localhost:8080/test/update?id=1&username=tom&password=654321&address=beijing)
 
@@ -589,7 +589,7 @@ mysql> select * from user;
 1 row in set (0.00 sec)
 ```
 
-### 5. 测试删除用户
+### 5。测试删除用户
 
 打开你的浏览器并输入网址：[http://localhost:8080/test/delete?id=1](http://localhost:8080/test/delete?id=1)
 

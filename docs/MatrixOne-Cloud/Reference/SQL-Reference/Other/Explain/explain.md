@@ -23,19 +23,19 @@ where option can be one of:
 
 ## 参数释义
 
-* ANALYZE:
+* ANALYZE：
 
 执行该命令并显示实际运行时和其他统计数据。该参数默认为 `FALSE`。
 
-* VERBOSE:
+* VERBOSE：
 
 `VERBOSE` 用作显示有关计划的其他信息。具体来说，包括计划树中每个节点的输出列列表、模式限定表和函数名称，始终使用范围表别名标记表达式中的变量，并且始终打印显示统计信息的每个触发器的名称。该参数默认为 `FALSE`。
 
-* FORMAT:
+* FORMAT：
 
 `FORMAT` 用作指定输出格式，可以是 *TEXT*、*JSON*。非文本输出包含与文本输出格式相同的信息，且容易被程序解析。该参数默认为 `TEXT`。
 
-* BOOLEAN:
+* BOOLEAN：
 
 `BOOLEAN` 指定所选选项是打开还是关闭。你可以写 `TRUE` 来启用该选项，或者写 `FALSE` 来禁用它。
 

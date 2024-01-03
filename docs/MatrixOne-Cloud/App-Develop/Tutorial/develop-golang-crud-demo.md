@@ -25,7 +25,7 @@
 	go get -u gorm.io/driver/mysql
 	```
 
-你可以参考 [Golang 连接 MatrixOne Cloud 服务](../connect-mo/connect-to-matrixone-with-go.md)了解如何通过 `Golang` 连接到 MatrixOne Cloud，本篇文档将指导你如何实现 CRUD（创建、读取、更新、删除）。
+你可以参考 [Golang 连接 MatrixOne Cloud 服务](../connect-mo/connect-to-matrixone-with-go.md)了解如何通过 `Golang` 连接到 MatrixOne Cloud，本篇文档将指导你如何实现 CRUD (创建、读取、更新、删除)。
 
 ## 步骤
 

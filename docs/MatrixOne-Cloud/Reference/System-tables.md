@@ -236,7 +236,7 @@ MatrixOne 系统数据库和表是 MatrixOne 存储系统信息的地方，你�
 
 - role：MatrixOne 节点角色，包括 CN、TN 和 Log。
 
-- account：默认为“sys”租户，即触发 SQL 请求的账户。
+- account：默认为 “sys” 租户，即触发 SQL 请求的账户。
 
 - type：SQL 类型，可以是 `select`，`insert`，`update`，`delete`，`other` 类型。
 
@@ -347,7 +347,7 @@ __Information Schema__ 提供了一种 ANSI 标准方式，用于查看系统的
 - `IS_NULLABLE`：列是否可以为空。如果该列可以存储空值，则该值为 `YES`；否则为 `NO`。
 - `DATA_TYPE`：列中的数据类型。
 - `CHARACTER_MAXIMUM_LENGTH`：对于字符串列，字符的最大长度。
-- `CHARACTER_OCTET_LENGTH`：对于字符串列，最大长度（以字节为单位）。
+- `CHARACTER_OCTET_LENGTH`：对于字符串列，最大长度 (以字节为单位)。
 - `NUMERIC_PRECISION`：数字类型列的数字精度。
 - `NUMERIC_SCALE`：数字类型列的数字比例。
 - `DATETIME_PRECISION`：对于时间类型列，小数秒精度。
@@ -387,11 +387,11 @@ __Information Schema__ 提供了一种 ANSI 标准方式，用于查看系统的
 - `SUBPARTITION_NAME`：如果 `PARTITIONS` 表中的行表示一个子分区，则为该子分区的名称；否则为空。
 - `PARTITION_ORDINAL_POSITION`：所有分区按照它们被定义的顺序进行索引，其中 1 表示分配给第一个分区的编号。随着分区的增加、删除和重新组织，索引可能会发生变化；该列中显示的编号反映了当前的顺序，考虑了任何索引变化。
 - `SUBPARTITION_ORDINAL_POSITION`：在给定分区内，子分区的索引和重新索引方式与表内分区的方式相同。
-- `PARTITION_METHOD`：取值之一为 `RANGE`、`LIST`、`HASH`、`LINEAR HASH`、`KEY` 或 `LINEAR KEY`。__Note:__ MatrixOne 暂不支持 `RANGE` 和 `LIST` 分区。
+- `PARTITION_METHOD`：取值之一为 `RANGE`、`LIST`、`HASH`、`LINEAR HASH`、`KEY` 或 `LINEAR KEY`。__Note：__MatrixOne 暂不支持 `RANGE` 和 `LIST` 分区。
 - `SUBPARTITION_METHOD`：取值之一为 `HASH`、`LINEAR HASH`、`KEY` 或 `LINEAR KEY`。
 - `PARTITION_EXPRESSION`：在创建表的 `CREATE TABLE` 或 `ALTER TABLE` 语句中使用的分区函数表达式，用于创建表的当前分区方案。
 - `SUBPARTITION_EXPRESSION`：这与 `PARTITION_EXPRESSION` 类似，用于定义表的子分区方式，如果表没有子分区，则该列为空。
-- `PARTITION_DESCRIPTION`：此列适用于 `RANGE` 和 `LIST` 分区。对于 `RANGE` 分区，它包含在分区的 `VALUES LESS THAN` 子句中设置的值，可以是整数或 `MAXVALUE`。对于 `LIST` 分区，此列包含在分区的 `VALUES IN` 子句中定义的值，这是一组逗号分隔的整数值。对于 `PARTITION_METHOD` 不是 `RANGE` 或 `LIST` 的分区，此列始终为空。__Note:__ MatrixOne 暂不支持 `RANGE` 和 `LIST` 分区。
+- `PARTITION_DESCRIPTION`：此列适用于 `RANGE` 和 `LIST` 分区。对于 `RANGE` 分区，它包含在分区的 `VALUES LESS THAN` 子句中设置的值，可以是整数或 `MAXVALUE`。对于 `LIST` 分区，此列包含在分区的 `VALUES IN` 子句中定义的值，这是一组逗号分隔的整数值。对于 `PARTITION_METHOD` 不是 `RANGE` 或 `LIST` 的分区，此列始终为空。__Note：__MatrixOne 暂不支持 `RANGE` 和 `LIST` 分区。
 - `TABLE_ROWS`：分区中的表行数。
 - `AVG_ROW_LENGTH`：存储在此分区或子分区中的行的平均长度，以字节为单位。这与 `DATA_LENGTH` 除以 `TABLE_ROWS` 得到的结果相同。
 - `DATA_LENGTH`：此分区或子分区中存储的所有行的总长度，以字节为单位；即存储在分区或子分区中的字节总数。
@@ -473,7 +473,7 @@ __Information Schema__ 提供了一种 ANSI 标准方式，用于查看系统的
 - `TABLE_NAME`：视图的名称。
 - `VIEW_DEFINITION`：提供视图定义的 `SELECT` 语句。包含了在 `SHOW Create VIEW` 生成的__创建表__列中看到的大部分内容。
 - `CHECK_OPTION`：`CHECK_OPTION` 属性的值。值为 `NONE`、`CASCADE` 或 `LOCAL`。
-- `IS_UPDATABLE`：在 `CREATE VIEW` 时设置一个名为视图可更新性标志的标志，如果 UPDATE 和 DELETE（以及类似的操作）对视图合法，则标志设置为 `YES（true）`。否则，标志设置为 `NO（false）`。
+- `IS_UPDATABLE`：在 `CREATE VIEW` 时设置一个名为视图可更新性标志的标志，如果 UPDATE 和 DELETE (以及类似的操作) 对视图合法，则标志设置为 `YES（true）`。否则，标志设置为 `NO（false）`。
 - `DEFINER`：创建视图的用户的帐户，格式为 `username@hostname`。
 - `SECURITY_TYPE`：视图 `SQL SECURITY` 特性。值为 `DEFINER` 或 `INVOKER`。
 - `CHARACTER_SET_CLIENT`：创建视图时 `character_set_client` 系统变量的会话值。
@@ -483,7 +483,7 @@ __Information Schema__ 提供了一种 ANSI 标准方式，用于查看系统的
 
 获取有关数据库表索引和统计信息的详细信息。例如，可以检查索引是否唯一，了解索引中的列顺序，以及估计索引中的唯一值数量。
 
-- `TABLE_CATALOG`：表的目录名称（始终为 'def'）。
+- `TABLE_CATALOG`：表的目录名称 (始终为 ‘def’)。
 - `TABLE_SCHEMA`：表所属的数据库名称。
 - `TABLE_NAME`：表的名称。
 - `NON_UNIQUE`：指示索引是否允许重复值。如果为 0，则索引是唯一索引。
@@ -496,7 +496,7 @@ __Information Schema__ 提供了一种 ANSI 标准方式，用于查看系统的
 - `SUB_PART`：索引部分长度。对于整个列，该值为 NULL。
 - `PACKED`：指示是否使用压缩存储的值。
 - `NULLABLE`：指示列是否允许 NULL 值。
-- `INDEX_TYPE`：索引的类型（如 BTREE、HASH 等）。
+- `INDEX_TYPE`：索引的类型 (如 BTREE、HASH 等)。
 - `COMMENT`：索引的注释信息。
 
 ## `mysql` 数据库

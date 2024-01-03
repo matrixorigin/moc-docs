@@ -63,4 +63,4 @@ mysql> select * from user;
 
 ## **限制**
 
-`INSERT ... ON DUPLICATE KEY UPDATE` 当前还不支持唯一键（Unique key），由于唯一键可以为 `NULL`，可能会导致一些未知错误。
+`INSERT ... ON DUPLICATE KEY UPDATE` 当前还不支持唯一键 (Unique key)，由于唯一键可以为 `NULL`，可能会导致一些未知错误。

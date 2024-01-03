@@ -39,11 +39,11 @@ MatrixOne Cloud 提供了支持跨数据库的事务功能，允许一个事务�
 
 ## MatrixOne Cloud 的事务隔离级别
 
-MatrixOne Cloud 支持**读已提交（Read Committed）**和**快照隔离**两种隔离级别，默认隔离级别是**读已提交（Read Committed）**。
+MatrixOne Cloud 支持**读已提交 (Read Committed)** 和**快照隔离**两种隔离级别，默认隔离级别是**读已提交 (Read Committed)**。
 
 ### 读已提交
 
-读已提交（Read Committed）是 MatrixOne Cloud 的默认隔离级别，也是 SQL 标准中的四个隔离级别之一。它最显著的特点是：
+读已提交 (Read Committed) 是 MatrixOne Cloud 的默认隔离级别，也是 SQL 标准中的四个隔离级别之一。它最显著的特点是：
 
 - 在不同的事务之间，只能读到其他事务已经提交的数据，对于未提交状态的数据，无法查看。
 - 读已提交的隔离级别，能够有效防止脏写和脏读，但是不能避免不可重复读与幻读。
@@ -54,7 +54,7 @@ MatrixOne Cloud 支持**读已提交（Read Committed）**和**快照隔离**两
 
 ### 快照隔离
 
-与 SQL 标准所定义的四个隔离级别不同，在 MatrixOne Cloud 中，支持的隔离级别是快照隔离（Snapshot Isolation），该级别的隔离在 SQL-92 标准的 **REPEATABLE READ** 和 **SERIALIZABLE** 之间。与其他隔离级别有所区别的是，快照隔离具备如下特性：
+与 SQL 标准所定义的四个隔离级别不同，在 MatrixOne Cloud 中，支持的隔离级别是快照隔离 (Snapshot Isolation)，该级别的隔离在 SQL-92 标准的 **REPEATABLE READ** 和 **SERIALIZABLE** 之间。与其他隔离级别有所区别的是，快照隔离具备如下特性：
 
 - 快照隔离对于指定事务内读取的数据不会反映其他同步的事务对数据所做的更改。指定事务使用本次事务开始时读取的数据行。
 
@@ -62,7 +62,7 @@ MatrixOne Cloud 支持**读已提交（Read Committed）**和**快照隔离**两
 
 - 写入数据的事务也不会阻止快照事务读取数据。
 
-与其他隔离级别相比，快照隔离对于脏读 (读取未提交数据)、脏写（写了修改后未提交的记录）、幻读 (前后多次读取，数据总量不一致) 等场景也实现了有效回避：
+与其他隔离级别相比，快照隔离对于脏读 (读取未提交数据)、脏写 (写了修改后未提交的记录)、幻读 (前后多次读取，数据总量不一致) 等场景也实现了有效回避：
 
 |Isolation Level|P0 Dirty Write|P1 Dirty Read|P4C Cursor Lost Update|P4 Lost Update|P2 Fuzzy Read|P3 Phantom|A5A Read Skew|A5B Write Skew|
 |---|---|---|---|---|---|---|---|---|

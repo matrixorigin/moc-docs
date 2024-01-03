@@ -26,19 +26,19 @@ MatrixOne Cloud 支持使用 `mo-dump` 导出数据。
 
 - **-db [数据库名称]**：必需参数。要备份的数据库的名称。
 
-- **-net-buffer-length [数据包大小]**: 数据包大小，即 SQL 语句字符的总大小。数据包是 SQL 导出数据的基本单位，如果不设置参数，则默认 1048576 Byte（1M），最大可设置 16777216 Byte（16M）。假如这里的参数设置为 16777216 Byte（16M），那么，当要导出大于 16M 的数据时，会把数据拆分成多个 16M 的数据包，除最后一个数据包之外，其它数据包大小都为 16M。
+- **-net-buffer-length [数据包大小]**：数据包大小，即 SQL 语句字符的总大小。数据包是 SQL 导出数据的基本单位，如果不设置参数，则默认 1048576 Byte (1M)，最大可设置 16777216 Byte (16M)。假如这里的参数设置为 16777216 Byte (16M)，那么，当要导出大于 16M 的数据时，会把数据拆分成多个 16M 的数据包，除最后一个数据包之外，其它数据包大小都为 16M。
 
-- **-no-data**: 当在命令中显式指定该项时仅导出数据库/包的创建语句，不导出数据。
+- **-no-data**：当在命令中显式指定该项时仅导出数据库/包的创建语句，不导出数据。
 
 - **-csv**：当在命令中显式指定该项时表示导出数据为 *CSV* 格式。
 
-- **-csv-field-delimiter [","]**: 设置 csv 字段分隔符，仅支持一个 utf8 字符，默认值为“,”。该项仅当设置导出数据格式为“csv”时启用。
+- **-csv-field-delimiter [“，”]**：设置 csv 字段分隔符，仅支持一个 utf8 字符，默认值为 “，”。该项仅当设置导出数据格式为 “csv” 时启用。
 
 - **-tbl [表名]**：可选参数。如果参数为空，则导出整个数据库。如果要备份指定表，则可以在命令中指定多个 `-tbl` 和表名。
 
 ## 如何使用 `mo-dump`
 
-### 1. 下载 mo-dump 二进制文件
+### 1。下载 mo-dump 二进制文件
 
 - 下载 [Linux x86 mo-dump 文件](https://github.com/matrixorigin/artwork/blob/main/docs/download/modump/linux-x86/mo-dump)
 - 下载 [Linux ARM mo-dump 文件](https://github.com/matrixorigin/artwork/blob/main/docs/download/modump/linuxarm/mo-dump)
@@ -48,14 +48,14 @@ MatrixOne Cloud 支持使用 `mo-dump` 导出数据。
 !!! note
     `mo-dump` 文件可以在相同的硬件平台上工作。但是需要注意在 x86 平台中构建的 `mo-dump` 二进制文件在 Darwin ARM 平台中则无法正常工作。你可以在同一套操作系统和硬件平台内构建并使用 `mo-dump` 二进制文件。`mo-dump` 目前只支持 Linux 和 macOS。
 
-### 2. 使用 `mo-dump` 导出 MatrixOne Cloud 的数据库
+### 2。使用 `mo-dump` 导出 MatrixOne Cloud 的数据库
 
 `mo-dump` 在命令行中非常易用。参见以下步骤示例，导出 *sql* 文件格式完整数据库：
 
 1. 选择目标实例，点击**连接 > 通过第三方工具连接**，右侧滑窗内可查阅到 MatrixOne Cloud 上你的实例主机地址、端口号、用户名和密码。
 
     !!! note
-        mo-dump 暂不支持连接串的用户名格式（即不支持原格式 `<accountname>:<username>:<rolename>`)，需要更改为 `<accountname>#<username>#<rolename>`。
+        mo-dump 暂不支持连接串的用户名格式 (即不支持原格式 `<accountname>:<username>:<rolename>`)，需要更改为 `<accountname>#<username>#<rolename>`。
 
 2. 在你本地计算机上打开终端窗口，输入以下命令，连接到 MatrixOne Cloud，并且导出数据库：
 

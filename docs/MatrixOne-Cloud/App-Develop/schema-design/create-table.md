@@ -220,7 +220,7 @@ SHOW TABLES IN `modatabase`;
 
 ### 命名表时应遵守的规则
 
-- 使用完全限定的表名称（例如：`CREATE TABLE {database_name}.{table_name}`）。这是因为你在不指定数据库名称时，MatrixOne Cloud 将使用你 SQL 会话中的当前数据库。若你未在 SQL 会话中使用 `USE {databasename};` 来指定数据库，MatrixOne Cloud 将会返回错误。
+- 使用完全限定的表名称 (例如：`CREATE TABLE {database_name}.{table_name}`)。这是因为你在不指定数据库名称时，MatrixOne Cloud 将使用你 SQL 会话中的当前数据库。若你未在 SQL 会话中使用 `USE {databasename};` 来指定数据库，MatrixOne Cloud 将会返回错误。
 
 - 请使用有意义的表名，例如，若你需要创建一个用户表，你可以使用名称：*user*，*t_user*，*users* 等，或遵循你公司或组织的命名规范。如果你的公司或组织没有相应的命名规范，可参考表命名规范。
 
@@ -242,4 +242,4 @@ SHOW TABLES IN `modatabase`;
 - 出于为性能考虑，尽量避免存储超宽表，表字段数不建议超过 60 个，建议单行的总数据大小不要超过 64K，数据长度过大字段最好拆到另外的表。
 - 不推荐使用复杂的数据类型。
 - 需要 `JOIN` 的字段，数据类型保障绝对一致，避免隐式转换。
-- 避免在单个单调数据列上定义主键。如果你使用单个单调数据列（例如：AUTO_INCREMENT 的列）来定义主键，有可能会对写性能产生负面影响。
+- 避免在单个单调数据列上定义主键。如果你使用单个单调数据列 (例如：AUTO_INCREMENT 的列) 来定义主键，有可能会对写性能产生负面影响。

@@ -14,7 +14,7 @@ A：是的，MatrixOne Cloud 几乎完全兼容 MySQL，因此您可以轻松将
 
 ## Q：**MatrixOne Cloud 上的实例指的是什么？**
 
-A：在 MatrixOne Cloud 中，您可以创建多个 MatrixOne(MO) 实例。每个 MO 实例相当于一个传统数据库，包括库、表、视图、列等数据库对象。MatrixOne Cloud 支持创建多种类型的 MO 实例，其中 Serverless 实例和 Standard 实例实际上是 MO 集群的租户。利用多租户能力，您可以快速创建（仅需秒级时间）和扩展或缩减实例，并享有高性价比。
+A：在 MatrixOne Cloud 中，您可以创建多个 MatrixOne(MO) 实例。每个 MO 实例相当于一个传统数据库，包括库、表、视图、列等数据库对象。MatrixOne Cloud 支持创建多种类型的 MO 实例，其中 Serverless 实例和 Standard 实例实际上是 MO 集群的租户。利用多租户能力，您可以快速创建 (仅需秒级时间) 和扩展或缩减实例，并享有高性价比。
 
 ## Q：**有哪些方式可以连接到 MatrixOne Cloud 上的实例？**
 
@@ -22,7 +22,7 @@ A：MatrixOne(MO) 实例虽然部署在云上，但支持公网和公有云之�
 
 ## Q：**什么是 Serverless 实例？它有哪些特点？**
 
-A：Serverless 实例是 MatrixOne Cloud 上的一种简单、经济的 MatrixOne 实例。创建时需要规划计算节点和存储资源的规模，但在业务变化时无需手动调整计算资源。Serverless 实例的计费也相对简单，不再需要为计算节点、I/O、网络出口流量分别付费。用户只需为每条 SQL 的执行计费，计费单位为 Compute Unit（CU）。
+A：Serverless 实例是 MatrixOne Cloud 上的一种简单、经济的 MatrixOne 实例。创建时需要规划计算节点和存储资源的规模，但在业务变化时无需手动调整计算资源。Serverless 实例的计费也相对简单，不再需要为计算节点、I/O、网络出口流量分别付费。用户只需为每条 SQL 的执行计费，计费单位为 Compute Unit (CU)。
 
 ## Q：**如何控制 Serverless 实例的消费？**
 
@@ -30,15 +30,15 @@ A：Serverless 实例是后付费的，每个整点后将统计前一个小时�
 
 ## Q：**如何查看 Serverless 实例中每条 SQL 的消费？**
 
-A：在 MatrixOne Cloud 实例管理平台的实例列表中，单击要查看的实例的连接按钮和连接到平台按钮，即可登录 MatrixOne Cloud 数据管理平台。然后，点击左侧的 "查询" -> "查询历史" 菜单，您将看到所有历史查询。MatrixOne Cloud 将统计并显示每一条 SQL 的 CU 消耗数量。默认情况下，CU 列是未显示的，您可以单击列按钮并选中 CU。
+A：在 MatrixOne Cloud 实例管理平台的实例列表中，单击要查看的实例的连接按钮和连接到平台按钮，即可登录 MatrixOne Cloud 数据管理平台。然后，点击左侧的 “查询” -> “查询历史” 菜单，您将看到所有历史查询。MatrixOne Cloud 将统计并显示每一条 SQL 的 CU 消耗数量。默认情况下，CU 列是未显示的，您可以单击列按钮并选中 CU。
 
 ## Q：**实例可以删除吗？删除后可以恢复吗？**
 
-A：是的，您可以在实例列表中单击某个实例的 "终止" 按钮来删除实例。MatrixOne Cloud 会在删除后自动保留实例 3 天。如果误删，您可以在 3 天内将实例恢复。
+A：是的，您可以在实例列表中单击某个实例的 “终止” 按钮来删除实例。MatrixOne Cloud 会在删除后自动保留实例 3 天。如果误删，您可以在 3 天内将实例恢复。
 
 ## Q：**实例的存储如何计费？**
 
-A：MatrixOne 使用对象存储技术，将几乎所有数据存储在公有云的对象存储上。这种存储方式经济高效且高度可用。MatrixOne 的存储费用与公有云官网的价格相同。对于后付费实例（如 Serverless 实例或 Standard 实例），MatrixOne Cloud 会按小时计算存储的平均使用量。对于预付费实例（如 Standard 包年包月实例），MatrixOne Cloud 将一次性按照公有云对象存储的价格和折扣扣费。
+A：MatrixOne 使用对象存储技术，将几乎所有数据存储在公有云的对象存储上。这种存储方式经济高效且高度可用。MatrixOne 的存储费用与公有云官网的价格相同。对于后付费实例 (如 Serverless 实例或 Standard 实例)，MatrixOne Cloud 会按小时计算存储的平均使用量。对于预付费实例 (如 Standard 包年包月实例)，MatrixOne Cloud 将一次性按照公有云对象存储的价格和折扣扣费。
 
 ## Q：**MatrixOne Cloud 有折扣或优惠吗？**
 

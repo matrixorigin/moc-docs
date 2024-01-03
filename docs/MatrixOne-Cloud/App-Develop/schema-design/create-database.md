@@ -24,7 +24,7 @@
 CREATE DATABASE IF NOT EXISTS `modatabase`;
 ```
 
-此语句会创建一个名为 *modatabase* 的数据库（如果尚不存在）。
+此语句会创建一个名为 *modatabase* 的数据库 (如果尚不存在)。
 
 要查看所有数据库，可在命令行执行一条 `SHOW DATABASES` 语句：
 

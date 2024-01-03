@@ -2,18 +2,18 @@
 
 ## 概述
 
-S3（Simple Storage Service）对象存储是指亚马逊的简单存储服务。你还可以使用与 S3 兼容的对象存储来存储几乎任何类型和大小的数据，包括数据湖、云原生应用程序和移动应用程序。如果你不熟悉 S3 对象服务，你可以在 [AWS](https://docs.aws.amazon.com/s3/index.html) 中查找一些基本介绍。
+S3 (Simple Storage Service) 对象存储是指亚马逊的简单存储服务。你还可以使用与 S3 兼容的对象存储来存储几乎任何类型和大小的数据，包括数据湖、云原生应用程序和移动应用程序。如果你不熟悉 S3 对象服务，你可以在 [AWS](https://docs.aws.amazon.com/s3/index.html) 中查找一些基本介绍。
 
 AWS S3 十多年来一直非常成功，因此它成为了对象存储的标准。因此几乎所有主流公有云厂商都提供了兼容 S3 的对象存储服务。
 
-MatrixOne Cloud 支持将文件从 S3 兼容的对象存储服务加载到数据库中。MatrixOne Cloud 支持 AWS 和国内主流云厂商（阿里云、腾讯云等）。
+MatrixOne Cloud 支持将文件从 S3 兼容的对象存储服务加载到数据库中。MatrixOne Cloud 支持 AWS 和国内主流云厂商 (阿里云、腾讯云等)。
 
 在 MatrixOne Cloud 中，有两种方法可以从 S3 兼容的对象存储中导入数据：
 
 * 使用带有 s3option 的 `Load data` 将文件加载到 MatrixOne Cloud 中。此方法会将数据加载到 MatrixOne Cloud 中，所有接下来的查询都将在 MatrixOne Cloud 中进行。
-* 创建一个带有 s3option 映射到 S3 文件的“外部表”，并直接查询这个外部表。该方法允许通过 S3 兼容的对象存储服务进行数据访问；每个查询的网络延迟都将被计算在内。
+* 创建一个带有 s3option 映射到 S3 文件的 “外部表”，并直接查询这个外部表。该方法允许通过 S3 兼容的对象存储服务进行数据访问；每个查询的网络延迟都将被计算在内。
 
-## 方式 1: `LOAD DATA`
+## 方式 1：`LOAD DATA`
 
 ### 语法结构
 
@@ -60,11 +60,11 @@ LOAD DATA URL s3option{"endpoint"='cos.ap-shanghai.myqcloud.com', "access_key_id
 ```
 
 !!! note
-    MatrixOne Cloud 提供了 S3 验证信息的安全保证，例如 `access_key_id` 和 `secret_access_key` 敏感信息在系统表（statement_info）记录里将被隐藏，保证你的账户安全。
+    MatrixOne Cloud 提供了 S3 验证信息的安全保证，例如 `access_key_id` 和 `secret_access_key` 敏感信息在系统表 (statement_info) 记录里将被隐藏，保证你的账户安全。
 
 ### 教程：从 AWS S3 加载文件
 
-本教程中将指导你完成从 AWS S3 加载**. csv** 文件的过程。
+本教程中将指导你完成从 AWS S3 加载**。csv** 文件的过程。
 
 如果你已经拥有一个 AWS 账户并且已经在你的 S3 服务中准备好数据文件，那么请继续阅读本教程章节。
 
@@ -182,7 +182,7 @@ create external table t1(col1 char(225)) url s3option{"endpoint"='cos.ap-shangha
 
 ### 教程：使用 S3 文件创建外部表
 
-本教程将指导你完成使用来自 AWS S3 的**. csv** 文件创建外部表的整个过程。
+本教程将指导你完成使用来自 AWS S3 的**。csv** 文件创建外部表的整个过程。
 
 !!! note
     由于帐户隐私，此代码示例不会显示帐户信息，例如 `access_key_id` 和 `secret_access_key`。
@@ -245,7 +245,7 @@ create external table t1(col1 char(225)) url s3option{"endpoint"='cos.ap-shangha
     21 rows in set (1.32 sec)
     ```
 
-5. （选做）如果需要将外部表数据导入到 MatrixOne Cloud 中的数据表，使用如下 SQL 语句：
+5. (选做) 如果需要将外部表数据导入到 MatrixOne Cloud 中的数据表，使用如下 SQL 语句：
 
     在 MatrixOne Cloud 中新建一个表 *t2*：
 

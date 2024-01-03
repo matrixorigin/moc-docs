@@ -121,11 +121,11 @@ MatrixOne Cloud 与 MySQL 8.0 的协议，以及 MySQL 8.0 常用的功能和语
 
 ## 数据类型
 
-- BOOL: 与 MySQL 的布尔值类型实际上是 int 不同，MatrixOne Cloud 的布尔值是一个新的类型，它的值只能是 true 或 false。
+- BOOL：与 MySQL 的布尔值类型实际上是 int 不同，MatrixOne Cloud 的布尔值是一个新的类型，它的值只能是 true 或 false。
 - DECIMAL：DECIMAL(P,D)，MatrixOne Cloud 的有效数字 P 和小数点后的位数 D 最大精度均为 38 位，MySQL 则分别为 65 和 30。
 - 浮点数：MySQL8.0.17 后废弃 Float(M,D) 及 Double(M,D) 用法，但 MatrixOne Cloud 仍保留该用法。
-- DATETIME: MySQL 的最大取值范围为 `'1000-01-01 00:00:00'` 到 `'9999-12-31 23:59:59'`，MatrixOne Cloud 的最大范围为 `'0001-01-01 00:00:00'` 到 `'9999-12-31 23:59:59'`。
-- TIMESTAMP: MySQL 的最大取值范围是 `'1970-01-01 00:00:01.000000'` UTC 到 `'2038-01-19 03:14:07.999999'` UTC，MatrixOne Cloud 的最大范围 `'0001-01-01 00:00:00'` UTC 到 `'9999-12-31 23:59:59'` UTC。
+- DATETIME：MySQL 的最大取值范围为 `'1000-01-01 00:00:00'` 到 `'9999-12-31 23:59:59'`，MatrixOne Cloud 的最大范围为 `'0001-01-01 00:00:00'` 到 `'9999-12-31 23:59:59'`。
+- TIMESTAMP：MySQL 的最大取值范围是 `'1970-01-01 00:00:01.000000'` UTC 到 `'2038-01-19 03:14:07.999999'` UTC，MatrixOne Cloud 的最大范围 `'0001-01-01 00:00:00'` UTC 到 `'9999-12-31 23:59:59'` UTC。
 - MatrixOne Cloud 支持 UUID 类型。
 - 不支持空间 Spatial 类型。
 - 不支持 BIT，SET 类型。

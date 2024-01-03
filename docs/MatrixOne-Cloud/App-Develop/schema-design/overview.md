@@ -27,7 +27,7 @@ MatrixOne Cloud 所指的表或 Table，从属于 MatrixOne Cloud 的某个数�
 索引有两种常见的类型，分别为：
 
 - Primary Key：主键索引，即标识在主键列上的索引，主键索引用于唯一标识表格中的每一行数据。
-- Secondary Index：次级索引，即在非主键上标识的索引，次级索引也称为非聚集索引（non-clustered index），用于提高查询性能和加速数据检索。
+- Secondary Index：次级索引，即在非主键上标识的索引，次级索引也称为非聚集索引 (non-clustered index)，用于提高查询性能和加速数据检索。
 
 ## 其他对象
 

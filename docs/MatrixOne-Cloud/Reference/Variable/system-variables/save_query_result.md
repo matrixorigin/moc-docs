@@ -44,7 +44,7 @@ set query_result_timeout = 48
 queryResultTimeout = 48  // 默认为 24
 ```
 
-__Note:__ 保存时间如果设置的值比上一次设置的短，不影响之前的保存结果。
+__Note：__保存时间如果设置的值比上一次设置的短，不影响之前的保存结果。
 
 ## 设置单个查询结果的最大值
 
@@ -64,7 +64,7 @@ set query_result_maxsize = 200
 queryResultMaxsize = 200 // 默认为 100
 ```
 
-__Note:__ 单个查询结果的最大值如果设置的值比上一次设置的小，不影响之前的保存结果大小。
+__Note：__单个查询结果的最大值如果设置的值比上一次设置的小，不影响之前的保存结果大小。
 
 ### 查询元数据信息
 
@@ -117,15 +117,15 @@ MODUMP QUERY_RESULT query_id INTO s3_path
    tn-data         etl             local           logservice-data s3
    ```
 
-   __Note:__ 如果你需要导出 `csv` 文件。路径需要以 `etl:` 开头。
+   __Note：__如果你需要导出 `csv` 文件。路径需要以 `etl:` 开头。
 
-- [FIELDS TERMINATED BY 'char']：可选参数。字段分割符号，默认为单引号 `'`。
+- [FIELDS TERMINATED BY ‘char’]：可选参数。字段分割符号，默认为单引号 `'`。
 
-- [ENCLOSED BY 'char']：可选参数。字段包括符号，默认为引双号 `“`。
+- [ENCLOSED BY ‘char’]：可选参数。字段包括符号，默认为引双号 `“`。
 
-- [LINES TERMINATED BY 'string']：可选参数。行结束符号，默认为换行符号 `\n`。
+- [LINES TERMINATED BY ‘string’]：可选参数。行结束符号，默认为换行符号 `\n`。
 
-- [header 'bool']：可选参数。bool 类型可以选择 `true` 或 `false`。`csv` 文件第一行为各个列名的标题行。
+- [header ‘bool’]：可选参数。bool 类型可以选择 `true` 或 `false`。`csv` 文件第一行为各个列名的标题行。
 
 - [MAX_FILE_SIZE unsigned_number]：可选参数。文件最大文件大小，单位为 KB。默认为 0。
 

@@ -6,7 +6,7 @@
 
 ### GRANT 概述
 
-系统权限是 MatrixOne Cloud 实例 Admin 管理员的权限。Admin 管理员可以创建和删除其他*用户（Users）*，管理*用户（Users）*，并给他们授予角色与权限。
+系统权限是 MatrixOne Cloud 实例 Admin 管理员的权限。Admin 管理员可以创建和删除其他*用户 (Users)*，管理*用户 (Users)*，并给他们授予角色与权限。
 
 要使用 `GRANT` 授予其他用户或角色权限，你首先必须具有 `WITH GRANT OPTION` 权限，并且你必须具有你正在授予的权限。了解你当前角色的授权情况或其他角色的授权情况，请使用 `SHOW GRANTS` 语句，更多信息，参见 [SHOW GRANTS](../Other/SHOW-Statements/show-grants.md)。
 

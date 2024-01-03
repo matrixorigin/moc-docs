@@ -134,7 +134,7 @@ partition_definition:
 `AUTO_INCREMENT`：表的初始值，初始值默认从 1 开始，每条新纪录递增 1，且数据列的值必须唯一。
 
 - 设置 `AUTO_INCREMENT` 的列，需为整数或者浮点数据类型。
-- 自增列需要设置为 `NOT NULL`，否则会直接存储 `NULL`。当你将 NULL（推荐）或 0 值插入索引的 `AUTO_INCREMENT` 列时，该列将设置为下一个序列值。通常这是 *value+1*，其中 *value* 是表中当前列的最大值。
+- 自增列需要设置为 `NOT NULL`，否则会直接存储 `NULL`。当你将 NULL (推荐) 或 0 值插入索引的 `AUTO_INCREMENT` 列时，该列将设置为下一个序列值。通常这是 *value+1*，其中 *value* 是表中当前列的最大值。
 
 - 每个表只能有一个 `AUTO_INCREMENT` 列，它必须可以被索引，且不能设置默认值。`AUTO_INCREMENT` 列需要含有正数值，如果插入一个负数被判断为插入一个非常大的正数，这样做是为了避免数字出现精度问题，并确保不会意外出现包含 0 的 `AUTO_INCREMENT` 列。
 
@@ -150,8 +150,8 @@ create table t1(id int auto_increment primary key) auto_increment = 10;
 在这个例子中，`id` 列是自增列，其起始值为 10，当向表中插入新记录时，`id` 列的值将从 10 开始，每次自动递增 1。如果没有指定 `AUTO_INCREMENT` 的起始值，默认起始值为 1，每次自动递增 1。
 
 !!! note
-    1. MatrixOne Cloud 目前仅支持默认的递增步长为 1，无论自增列的初始值为何，每次自动递增都为 1。暂时不支持设置递增步长大小。
-    2. MatrixOne Cloud 仅语法上支持使用系统变量 `set @@auto_increment_offset=n` 来设置自增列初始值，实际并不生效。
+    1。MatrixOne Cloud 目前仅支持默认的递增步长为 1，无论自增列的初始值为何，每次自动递增都为 1。暂时不支持设置递增步长大小。
+    2。MatrixOne Cloud 仅语法上支持使用系统变量 `set @@auto_increment_offset=n` 来设置自增列初始值，实际并不生效。
 
 #### PRIMARY KEY
 
@@ -174,7 +174,7 @@ create table t1(id int auto_increment primary key) auto_increment = 10;
 ```
 
 !!! Note 注意区分
-    上述示例中只有一个主键，并且其中仅包含了一列（`ID`）
+    上述示例中只有一个主键，并且其中仅包含了一列 (`ID`)
 
 而下面 SQL 语句在创建 `Students` 表时，在其中的 `ID` 和 `LastName` 列创建主键：
 
@@ -190,7 +190,7 @@ create table t1(id int auto_increment primary key) auto_increment = 10;
 
 #### FOREIGN KEY
 
-FOREIGN KEY 约束，即外键约束，是表的一个特殊字段，经常与主键约束一起使用。外键约束是用于防止破坏表之间链接的行为。对于两个具有关联关系的表而言，相关联字段中主键所在的表就是主表（父表），外键所在的表就是从表（子表）。外键用来建立主表与从表的关联关系，为两个表的数据建立连接，约束两个表中数据的一致性和完整性。
+FOREIGN KEY 约束，即外键约束，是表的一个特殊字段，经常与主键约束一起使用。外键约束是用于防止破坏表之间链接的行为。对于两个具有关联关系的表而言，相关联字段中主键所在的表就是主表 (父表)，外键所在的表就是从表 (子表)。外键用来建立主表与从表的关联关系，为两个表的数据建立连接，约束两个表中数据的一致性和完整性。
 
 FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。
 
@@ -280,7 +280,7 @@ CREATE TABLE Orders (
 - 单列语法为：`create table() cluster by col;`  
 - 多列语法为：`create table() cluster by (col1, col2);`  
 
-**Note:** `Cluster by` 不能和主键同时存在，否则会语法报错；`Cluster by` 只能在建表时指定，不支持动态创建。
+**Note：**`Cluster by` 不能和主键同时存在，否则会语法报错；`Cluster by` 只能在建表时指定，不支持动态创建。
 
 #### Table PARTITION 和 PARTITIONS
 
@@ -340,7 +340,7 @@ CREATE TABLE t1 (col1 INT, col2 CHAR(5), col3 DATETIME)
 
 ·  KEY 分区，按照某个字段取余。分区对象必须为列，不能是基于列的表达式，且允许多列。KEY 分区列可以不指定，默认为主键列或者唯一键列，无主键和唯一键的情况下，则必须显性指定列。
 
-类似于 `HASH`。`column_list` 参数只是一个包含 1 个或多个表列的列表（最大值：16）。下面的示例为一个按 `KEY` 分区的简单表，有 4 个分区：
+类似于 `HASH`。`column_list` 参数只是一个包含 1 个或多个表列的列表 (最大值：16)。下面的示例为一个按 `KEY` 分区的简单表，有 4 个分区：
 
 ```
 CREATE TABLE tk (col1 INT, col2 CHAR(5), col3 DATE)

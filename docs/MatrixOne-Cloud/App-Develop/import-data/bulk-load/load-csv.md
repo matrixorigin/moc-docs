@@ -4,7 +4,7 @@
 
 在使用 MatrixOne Cloud 时，支持使用 `LOAD DATA LOCAL` 语法将位于**客户端主机**上的 *csv* 数据文件导入至 MatrixOne Cloud 集群，详细语法可参考 [LOAD DATA 语法介绍](../../../Reference/SQL-Reference/Data-Manipulation-Language/load-data.md)。
 
-__Note__: *CSV*（逗号分隔值）文件是一种特殊的文件类型，可在 Excel 中创建或编辑，*CSV* 文件不是采用多列的形式存储信息，而是使用逗号分隔的形式存储信息。MatrixOne 可使用的 *CSV* 格式需符合 **RFC4180** 标准。
+__Note__：*CSV* (逗号分隔值) 文件是一种特殊的文件类型，可在 Excel 中创建或编辑，*CSV* 文件不是采用多列的形式存储信息，而是使用逗号分隔的形式存储信息。MatrixOne 可使用的 *CSV* 格式需符合 **RFC4180** 标准。
 
 ## 语法结构
 
@@ -26,7 +26,7 @@ INTO TABLE tbl_name
 
 ## 在 MySQL Client 中使用 `Load data local` 命令导入数据
 
-__Note__: 使用 `Load data local` 命令时，数据文件需位于执行该语句的 MySQL 客户端所在的服务器中。
+__Note__：使用 `Load data local` 命令时，数据文件需位于执行该语句的 MySQL 客户端所在的服务器中。
 
 ### 步骤
 

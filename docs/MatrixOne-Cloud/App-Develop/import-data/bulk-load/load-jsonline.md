@@ -1,10 +1,10 @@
 # 插入 jsonlines 文件
 
-本篇文档将指导你如何将 JSONLines 格式数据（即 *jl* 或 *jsonl* 文件）通过 `LOAD DATA LOCAL` 命令导入 MatrixOne Cloud。
+本篇文档将指导你如何将 JSONLines 格式数据 (即 *jl* 或 *jsonl* 文件) 通过 `LOAD DATA LOCAL` 命令导入 MatrixOne Cloud。
 
 ## 有关 JSONLines 格式
 
-JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。你可以参见[官方文档](https://www.json.org/json-en.html)获取更多有关 JSON 的信息。
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式。你可以参见[官方文档](https://www.json.org/json-en.html)获取更多有关 JSON 的信息。
 
 [JSONLines](https://jsonlines.org/) 文本格式，也称为换行符分隔的 JSON，它是一种更为方便存储结构化的数据格式，可以一次处理一条记录。它每一行都是完整、合法的 JSON 值；它采用 `\n` 作为行分隔符。JSONLines 的每一行都是独立的，因此行的开头或结尾不需要逗号。JSONLines 的全部内容也不需要用 `[]` 或 `{}` 括起来。
 
@@ -30,7 +30,7 @@ JSONLines 格式只需要每一行都有一个有效的 JSON 值。但 MatrixOne
 {"id":3,"father":"Bob","mother":"Monika"}
 ```
 
-无效对象 JSONLines 示例（具有嵌套结构）：
+无效对象 JSONLines 示例 (具有嵌套结构)：
 
 ```
 {"id":1,"father":"Mark","mother":"Charlotte","children":["Tom"]}
@@ -48,7 +48,7 @@ JSONLines 格式只需要每一行都有一个有效的 JSON 值。但 MatrixOne
 ["Deloise", "2012A", 19, true]
 ```
 
-无效数组 JSONLines 示例（无效原因是因为数据类型和列号不匹配）：
+无效数组 JSONLines 示例 (无效原因是因为数据类型和列号不匹配)：
 
 ```
 ["Gilbert", "2013", 24, true, 100]

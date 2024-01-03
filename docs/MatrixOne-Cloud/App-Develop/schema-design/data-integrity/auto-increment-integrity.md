@@ -1,6 +1,6 @@
 # AUTO INCREMENT 自增约束
 
-自增约束（Auto-Increment Constraint）是 MatrixOne Cloud 一种用于自动为表中的列生成唯一标识值的特性。它允许你在插入新行时，自动为指定的自增列生成一个递增的唯一值。这在许多情况下非常有用，例如用作主键或标识符。
+自增约束 (Auto-Increment Constraint) 是 MatrixOne Cloud 一种用于自动为表中的列生成唯一标识值的特性。它允许你在插入新行时，自动为指定的自增列生成一个递增的唯一值。这在许多情况下非常有用，例如用作主键或标识符。
 
 **自增约束特性**
 
@@ -16,7 +16,7 @@
 
 ### 语法说明
 
-在创建表时，可以为一个列定义自增约束。通常，自增列的数据类型为整数类型（如 `INT` 或 `BIGINT`）。在创建表时，使用 `AUTO_INCREMENT` 关键字为列添加自增约束。
+在创建表时，可以为一个列定义自增约束。通常，自增列的数据类型为整数类型 (如 `INT` 或 `BIGINT`)。在创建表时，使用 `AUTO_INCREMENT` 关键字为列添加自增约束。
 
 ```sql
 CREATE TABLE table_name (
@@ -28,7 +28,7 @@ CREATE TABLE table_name (
 
 - `table_name`：表的名称。
 - `column_name`：要定义为自增的列的名称。
-- `data_type`：列的数据类型，通常为整数类型（如 `INT` 或 `BIGINT`）。
+- `data_type`：列的数据类型，通常为整数类型 (如 `INT` 或 `BIGINT`)。
 - `primary_key_column`：表的主键列。
 
 ### 示例

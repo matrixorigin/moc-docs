@@ -2,11 +2,11 @@
 
 MatrixOne Cloud 采用默认的加密传输，支持 TLS 协议的加密传输，通过该方式减少了数据库中敏感信息泄露的风险。加密传输是一种通过密钥对信息进行加密和解密的方法，有助于有效保护数据的安全。
 
-传输层安全性（Transport Layer Security，TLS）是一种广泛采用的安全协议，MatrixOne Cloud 支持多个协议版本，包括 TLS 1.0、TLS 1.1 和 TLS 1.2。
+传输层安全性 (Transport Layer Security，TLS) 是一种广泛采用的安全协议，MatrixOne Cloud 支持多个协议版本，包括 TLS 1.0、TLS 1.1 和 TLS 1.2。
 
 ## 如何使用
 
-### 1. 验证 MatrixOne Cloud 的 SSL 是否启用
+### 1。验证 MatrixOne Cloud 的 SSL 是否启用
 
 1. 登录到 MatrixOne Cloud，选择目标实例，点击**连接 > 通过第三方工具连接**，右侧滑窗内可查阅到 MatrixOne Cloud 上你的实例连接串。
 
@@ -48,7 +48,7 @@ MatrixOne Cloud 采用默认的加密传输，支持 TLS 协议的加密传输�
     --------------
     ```
 
-### 2. 配置 MySQL 客户端参数
+### 2。配置 MySQL 客户端参数
 
 你也可以在通过 MySQL 客户端连接 MatrixOne Cloud 时，通过 `--ssl-mode` 参数指定加密连接行为，代码示例如下：
 

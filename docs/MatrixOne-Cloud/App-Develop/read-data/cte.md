@@ -1,6 +1,6 @@
 # 公共表表达式 (CTE)
 
-公用表表达式（CTE,Common table expression) 是一个命名的临时结果集，仅在单个 SQL 语句 (例如 `SELECT`，`INSERT`，`UPDATE` 或 `DELETE`) 的执行范围内存在。
+公用表表达式 (CTE,Common table expression) 是一个命名的临时结果集，仅在单个 SQL 语句 (例如 `SELECT`，`INSERT`，`UPDATE` 或 `DELETE`) 的执行范围内存在。
 
 与派生表类似，CTE 不作为对象存储，仅在查询执行期间持续；与派生表不同，CTE 可以是自引用，也可以在同一查询中多次引用。此外，与派生表相比，CTE 提供了更好的可读性和性能。
 
@@ -21,7 +21,7 @@ WITH <query_name> AS (
 SELECT ... FROM <query_name>;
 ```
 
-- 递归公共表达式：是指 CTE 中引用自身的表达式，用于处理具有递归结构的数据，例如树形结构、图形等。递归 CTE 在定义中包含一个基本查询（起始条件），然后在该基本查询的结果上进行递归操作，直到满足停止条件为止。递归 CTE 语法如下：
+- 递归公共表达式：是指 CTE 中引用自身的表达式，用于处理具有递归结构的数据，例如树形结构、图形等。递归 CTE 在定义中包含一个基本查询 (起始条件)，然后在该基本查询的结果上进行递归操作，直到满足停止条件为止。递归 CTE 语法如下：
 
 ```sql
 WITH RECURSIVE <query_name> AS (
@@ -38,7 +38,7 @@ SELECT ... FROM <query_name>;
 
 ## CTE 语句使用示例
 
-假设我们要创建一个名为 `EMPLOYEES` 的表，其中包含员工的层次结构关系，然后使用非递归 Common Table Expression（CTE）和递归 CTE 分别查询员工层次结构。
+假设我们要创建一个名为 `EMPLOYEES` 的表，其中包含员工的层次结构关系，然后使用非递归 Common Table Expression (CTE) 和递归 CTE 分别查询员工层次结构。
 
 首先，我们创建一个 `EMPLOYEES` 表并插入一些示例数据：
 
@@ -116,7 +116,7 @@ SELECT * FROM EmployeeInfo;
 9 rows in set (0.00 sec)
 ```
 
-我们使用了一个递归 CTE `EmployeeHierarchy`，它首先选择顶层经理（`MANAGER_ID IS NULL`），然后通过递归连接找到每个员工的直接下属，同时跟踪层次级别。这样，我们就可以通过查询 CTE 来获取员工层次结构的详细信息。
+我们使用了一个递归 CTE `EmployeeHierarchy`，它首先选择顶层经理 (`MANAGER_ID IS NULL`)，然后通过递归连接找到每个员工的直接下属，同时跟踪层次级别。这样，我们就可以通过查询 CTE 来获取员工层次结构的详细信息。
 
 非递归 CTE 示例只是从 `EMPLOYEES` 表中选择所有员工的基本信息，包括 `EMPLOYEE_ID`、`NAME` 和 `MANAGER_ID`。
 

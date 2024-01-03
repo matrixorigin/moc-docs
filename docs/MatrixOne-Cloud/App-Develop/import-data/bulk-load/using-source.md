@@ -16,7 +16,7 @@ SOURCE /path/to/your/sql_script.sql;
 
 ### 步骤
 
-#### 1. MySQL 数据转储
+#### 1。MySQL 数据转储
 
 你需要拥有对 MySQL 实例的完全访问权限。
 
@@ -32,7 +32,7 @@ mysqldump -h IP_ADDRESS -uUSERNAME -pPASSWORD -d DB_NAME1 DB_NAME2 ... OUTPUT_FI
 mysqldump -h 127.0.0.1 -uroot -proot -d test > a.sql
 ```
 
-#### 2. 导入至 MatrixOne Cloud
+#### 2。导入至 MatrixOne Cloud
 
 将整个表结构和数据导入到 MatrixOne Cloud 中。
 
@@ -50,7 +50,7 @@ mysql> source /YOUR_PATH/a.sql
 nohup mysql -h moc.cluster.matrixonecloud.cn -P 6001 -u a123456b_78cd_9e12_fg34_abcd5d6789ef:admin:accountadmin  -p'$pwd' -e 'use dbname; source /YOUR_PATH/a.sql;' &
 ```
 
-#### 3. 检查数据
+#### 3。检查数据
 
 导入成功后，使用如下 SQL 语句查看导入结果：
 

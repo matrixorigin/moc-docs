@@ -10,9 +10,9 @@
 
 - 如果表具有 `AUTO_INCREMENT` 列，则 `TRUNCATE TABLE` 语句将自动递增值重置为零。
 
-- 如果表具有任何外键约束（`FOREIGN KEY`），则 `TRUNCATE TABLE` 语句会逐个删除行。
+- 如果表具有任何外键约束 (`FOREIGN KEY`)，则 `TRUNCATE TABLE` 语句会逐个删除行。
 
-- 如果表没有任何外键约束（`FOREIGN KEY`），则 `TRUNCATE TABLE` 语句将删除该表并重新创建一个具有相同结构的新表
+- 如果表没有任何外键约束 (`FOREIGN KEY`)，则 `TRUNCATE TABLE` 语句将删除该表并重新创建一个具有相同结构的新表
 
 `DROP TABLE`、`TRUNCATE TABLE` 和 `DELETE TABLE` 的区别：
 

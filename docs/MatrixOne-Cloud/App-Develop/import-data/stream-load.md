@@ -39,7 +39,7 @@ INTO TABLE tbl_name;
 
 2. [通过 MySQL Client 连接 MatrixOne Cloud 服务](../connect-mo/database-client-tools.md#mysql-client-matrixone-cloud)。
 
-3. 在 MatrixOne Cloud 数据库中执行 `LOAD DATA INLINE` 之前，需要提前创建数据表 `user`:
+3. 在 MatrixOne Cloud 数据库中执行 `LOAD DATA INLINE` 之前，需要提前创建数据表 `user`：
 
     ```mysql
 

@@ -8,17 +8,17 @@
 
 通常情况下，从 SQL 语句结构上，子查询语句一般有以下几种形式：
 
-- 标量子查询（Scalar Subquery），如 `SELECT (SELECT s1 FROM t2) FROM t1`。
-- 派生表（Derived Tables），如 `SELECT t1.s1 FROM (SELECT s1 FROM t2) t1`。
-- 存在性测试（Existential Test），如 `WHERE NOT EXISTS(SELECT ... FROM t2)`，`WHERE t1.a IN (SELECT ... FROM t2)`。
-- 集合比较（Quantified Comparison），如 `WHERE t1.a = ANY(SELECT ... FROM t2)`。
+- 标量子查询 (Scalar Subquery)，如 `SELECT (SELECT s1 FROM t2) FROM t1`。
+- 派生表 (Derived Tables)，如 `SELECT t1.s1 FROM (SELECT s1 FROM t2) t1`。
+- 存在性测试 (Existential Test)，如 `WHERE NOT EXISTS(SELECT ... FROM t2)`，`WHERE t1.a IN (SELECT ... FROM t2)`。
+- 集合比较 (Quantified Comparison)，如 `WHERE t1.a = ANY(SELECT ... FROM t2)`。
 - 作为比较运算符操作数的子查询，如 `WHERE t1.a > (SELECT ... FROM t2)`。
 
 关于子查询 SQL 语句，参见 [SUBQUERY](../../Reference/SQL-Reference/Data-Query-Language/subqueries/subquery.md)。
 
 另外，从 SQL 语句执行情况上，子查询语句一般有以下两种形式：
 
-1. 关联子查询（Correlated Subquery）：数据库嵌套查询中内层查询和外层查询不相互独立，内层查询也依赖于外层查询。执行顺序为：
+1. 关联子查询 (Correlated Subquery)：数据库嵌套查询中内层查询和外层查询不相互独立，内层查询也依赖于外层查询。执行顺序为：
 
    - 先从外层查询中查询中一条记录。
 

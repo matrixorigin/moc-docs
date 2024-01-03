@@ -18,8 +18,8 @@ MatrixOne 默认支持 UTF-8 字符集，且目前只支持 UTF-8。
 
 * **MatrixOne 支持哪些约束和索引？**
 
-MatrixOne 目前支持主键 (Primary Key), 唯一 (Unique Key), 非空 (Not Null)，外键 (Foreign Key)，自增约束 (Auto Increment) 及次级索引（Secondary Index）。次级索引目前仅实现语法支持，没有加速作用。
-另外 MatrixOne 还提供了针对无主键表的排序键 (Cluster by), 它可以帮助我们提前针对需要查询的列进行排序，加速查询。
+MatrixOne 目前支持主键 (Primary Key)，唯一 (Unique Key)，非空 (Not Null)，外键 (Foreign Key)，自增约束 (Auto Increment) 及次级索引 (Secondary Index)。次级索引目前仅实现语法支持，没有加速作用。
+另外 MatrixOne 还提供了针对无主键表的排序键 (Cluster by)，它可以帮助我们提前针对需要查询的列进行排序，加速查询。
 
 * **MatrixOne 支持哪些查询类型？**
 
@@ -27,7 +27,7 @@ MatrixOne 支持大部分常用 SQL 查询：
 
 基础查询：支持常见的分组，去重，过滤，排序，限定，正则表达式等基础查询能力。
 
-高级查询：支持视图，子查询，联接，组合，公共表表达式（CTE），窗口函数，Prepare 预处理等高级查询能力。
+高级查询：支持视图，子查询，联接，组合，公共表表达式 (CTE)，窗口函数，Prepare 预处理等高级查询能力。
 
 聚合函数：支持常见的 AVG，COUNT，MIN，MAX，SUM 等聚合函数。
 
@@ -57,7 +57,7 @@ MatrixOne 支持与 MySQL 相同的 [`INSERT`](../App-Develop/import-data/insert
 
 * **MatrixOne 是否支持事务？支持的事务隔离级别是什么？**
 
-MatrixOne 支持 ACID（原子性、一致性、隔离性、持久性）的事务能力，支持悲观和乐观事务，默认使用悲观事务。使用悲观事务的时候会采用 Read Committed 隔离级别，切换成乐观事务的时候会采用 Snapshot Isolation 隔离级别。
+MatrixOne 支持 ACID (原子性、一致性、隔离性、持久性) 的事务能力，支持悲观和乐观事务，默认使用悲观事务。使用悲观事务的时候会采用 Read Committed 隔离级别，切换成乐观事务的时候会采用 Snapshot Isolation 隔离级别。
 
 * **MatrixOne 中的 `sql_mode` 是什么？**
 

@@ -4,7 +4,7 @@ MarixOne Cloud 为用户提供了实例间数据快速共享的功能，用户�
 
 ## 发布订阅
 
-数据库的发布订阅（Publish-Subscribe，简称 Pub/Sub）是一种消息传递模式，其中**发布者**将消息发送给一个或多个**订阅者**，而**订阅者**则接收并处理该消息。在这种模式下，发布者和订阅者之间是松耦合的，它们之间不需要直接通信，因此可以提高应用程序的可扩展性和灵活性。在 MarixOne Cloud 中发布者和订阅者都是 MarixOne Cloud 上的实例。
+数据库的发布订阅 (Publish-Subscribe，简称 Pub/Sub) 是一种消息传递模式，其中**发布者**将消息发送给一个或多个**订阅者**，而**订阅者**则接收并处理该消息。在这种模式下，发布者和订阅者之间是松耦合的，它们之间不需要直接通信，因此可以提高应用程序的可扩展性和灵活性。在 MarixOne Cloud 中发布者和订阅者都是 MarixOne Cloud 上的实例。
 
 在数据库中，发布订阅功能通常被用于实时数据更新、缓存同步、业务事件通知等场景。例如，当数据库中某个表的数据发生变化时，可以通过发布订阅功能实时通知订阅者，从而实现实时数据同步和处理。另外，也可以通过发布订阅功能来实现业务事件的通知，例如某个订单被取消、某个库存数量不足等等。
 
@@ -30,9 +30,9 @@ MarixOne Cloud 为用户提供了实例间数据快速共享的功能，用户�
 
 - **订阅**：订阅是指一个数据库选择接收和复制发布的数据库对象的数据。
 
-- **发布端（Pub）**：发布端是执行发布操作的数据库。发布端负责创建和管理发布的对象，以及管理订阅该发布对象的数据库的访问权限。
+- **发布端 (Pub)**：发布端是执行发布操作的数据库。发布端负责创建和管理发布的对象，以及管理订阅该发布对象的数据库的访问权限。
 
-- **订阅端（Sub）**：订阅端是订阅发布对象的实例。
+- **订阅端 (Sub)**：订阅端是订阅发布对象的实例。
 
 - **发布对象**：发布对象是在发布端创建并设置为可发布的数据库对象，即数据库。这些对象的数据可以被订阅端访问和复制。
 
@@ -42,12 +42,12 @@ MarixOne Cloud 为用户提供了实例间数据快速共享的功能，用户�
 
 ### 发布/订阅应用范围
 
-**发布端（Pub）**和**订阅端（Sub）**均为 MatrixOne 的实例。
+**发布端 (Pub)** 和**订阅端 (Sub)** 均为 MatrixOne 的实例。
 
 ### 可发布/可订阅权限范围
 
-- **发布端（Pub）**只有 ACCOUNTADMIN 或 MOADMIN 角色可以创建发布与订阅。
-- **订阅端（Sub）**由 ACCOUNTADMIN 或 MOADMIN 角色操作访问订阅数据权限。
+- **发布端 (Pub)** 只有 ACCOUNTADMIN 或 MOADMIN 角色可以创建发布与订阅。
+- **订阅端 (Sub)** 由 ACCOUNTADMIN 或 MOADMIN 角色操作访问订阅数据权限。
 
 ### 发布/订阅数据范围
 
@@ -55,10 +55,10 @@ MarixOne Cloud 为用户提供了实例间数据快速共享的功能，用户�
 - 发布和订阅只在数据库级别实现，目前还不支持直接进行表级别的发布和订阅。
 - **订阅端**对**订阅库**只具备读取权限。
 
-- 若**发布端（Pub）**调整了发布的分享范围，那些不在新范围内的**订阅端（Sub）**如果已经创建了订阅库，那么对这个**订阅库**的访问将无效。
-- 若**发布端（Pub）**尝试删除已经发布的数据库，那么此次删除将不会成功。
-- 若**发布端（Pub）**删除了**发布**，但订阅库中的对应对象仍存在，此时**订阅端（Sub）**访问这个对象会触发错误，需要由**订阅端（Sub）**删除对应的**订阅**。
-- 若**发布端（Pub）**删除了**发布对象**，但在订阅库中的对应对象仍然存在，此时**订阅端（Sub）**访问这个对象会触发错误，需要由**订阅端（Sub）**删除对应的**订阅对象**。
+- 若**发布端 (Pub)** 调整了发布的分享范围，那些不在新范围内的**订阅端 (Sub)** 如果已经创建了订阅库，那么对这个**订阅库**的访问将无效。
+- 若**发布端 (Pub)** 尝试删除已经发布的数据库，那么此次删除将不会成功。
+- 若**发布端 (Pub)** 删除了**发布**，但订阅库中的对应对象仍存在，此时**订阅端 (Sub)** 访问这个对象会触发错误，需要由**订阅端 (Sub)** 删除对应的**订阅**。
+- 若**发布端 (Pub)** 删除了**发布对象**，但在订阅库中的对应对象仍然存在，此时**订阅端 (Sub)** 访问这个对象会触发错误，需要由**订阅端 (Sub)** 删除对应的**订阅对象**。
 
 ### 发布订阅示例
 
@@ -79,7 +79,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布订阅数据库
 
-1. **发布者**: 实例 A 创建数据库 mall 与表 customer 并发布此数据库为 pub_mall:
+1. **发布者**：实例 A 创建数据库 mall 与表 customer 并发布此数据库为 pub_mall：
 
     ```mysql
     -- 实例 A
@@ -91,7 +91,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
     create publication pub_mall database mall;
     ```
 
-2. **订阅者**: 实例 B 和实例 C 都创建订阅库 sub_mall（订阅自实例 A 的 pub_mall），于是得到实例 A 数据库 mall 中的所有数据：
+2. **订阅者**：实例 B 和实例 C 都创建订阅库 sub_mall (订阅自实例 A 的 pub_mall)，于是得到实例 A 数据库 mall 中的所有数据：
 
     ```mysql
     -- 实例 B && 实例 C 
@@ -109,7 +109,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 订阅后数据同步更新
 
-1. **发布者**: 实例 A 创建数据表 orders：
+1. **发布者**：实例 A 创建数据表 orders：
 
     ```mysql
     --  实例 A
@@ -119,7 +119,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
     );
     ```
 
-2. **订阅者**: 已经订阅数据库 mall 的实例 B 和实例 C 得到更新的数据表 orders:
+2. **订阅者**：已经订阅数据库 mall 的实例 B 和实例 C 得到更新的数据表 orders：
 
     ```mysql
     --  实例 B &&  实例 C
@@ -136,7 +136,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布者可指定有限订阅者
 
-1. **发布者**: 实例 A 创建数据库 school 与表 student，并发布 pub_school 给实例 B 和实例 D:
+1. **发布者**：实例 A 创建数据库 school 与表 student，并发布 pub_school 给实例 B 和实例 D：
 
     ```mysql
     --  实例 A
@@ -148,7 +148,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
     create publication pub_school database school account 499575b7_4b78_403b_8356_ebd767dcxxxx,abf2eb89_faf1_40fd_b24c_19bed148xxxx;
     ```
 
-2. **订阅者**: 实例 B 和实例 C 都创建订阅库 sub_school（订阅自实例 A 的 pub_school），实例 B 订阅成功并得到数据，实例 C 订阅失败：
+2. **订阅者**：实例 B 和实例 C 都创建订阅库 sub_school (订阅自实例 A 的 pub_school)，实例 B 订阅成功并得到数据，实例 C 订阅失败：
 
     ```mysql
     -- 实例 B 
@@ -171,14 +171,14 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布者可发布给全体
 
-1. **发布者**: 实例 A 修改发布 pub_school 给全部实例：
+1. **发布者**：实例 A 修改发布 pub_school 给全部实例：
 
     ```mysql
     -- 实例 A
     alter publication pub_school account all;
     ```
 
-2. **订阅者**: 实例 C 创建订阅库 sub_school 成功，得到共享的数据表 student：
+2. **订阅者**：实例 C 创建订阅库 sub_school 成功，得到共享的数据表 student：
 
     ```mysql
     -- 实例 C
@@ -195,14 +195,14 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布者可删除已发布的发布对象，订阅者随即无法连接相关的订阅对象，但是可以删除
 
-1. **发布者**: 实例 A 删除发布 pub_mall:
+1. **发布者**：实例 A 删除发布 pub_mall：
 
     ```mysql
     -- 实例 A
     drop publication pub_mall;
     ```
 
-2. **订阅者**: 实例 B 连接 sub_mall 失败：
+2. **订阅者**：实例 B 连接 sub_mall 失败：
 
     ```mysql
     -- 实例 B 
@@ -210,7 +210,7 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
     ERROR 20101 (HY000): internal error: there is no publication pub_mall
     ```
 
-3. **订阅者**: 实例 C 删除 sub_mall:
+3. **订阅者**：实例 C 删除 sub_mall：
 
     ```mysql
     -- 实例 C 
@@ -219,14 +219,14 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布者重新发布已经删除的发布对象，之前的订阅者可以重新连接订阅对象
 
-1. **发布者**: 实例 A 重新创建 pub_mall:
+1. **发布者**：实例 A 重新创建 pub_mall：
 
     ```mysql
     -- 实例 A
     create publication pub_mall database mall;
     ```
 
-2. **订阅者**: 实例 B 连接 sub_mall 成功：
+2. **订阅者**：实例 B 连接 sub_mall 成功：
 
     ```mysql
     -- 实例 B 
@@ -243,14 +243,14 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
 
 #### 发布者发布已删除发布对象的同名对象，之前的订阅者可以连接至新的订阅对象
 
-1. **发布者**: 实例 A 删除发布 pub_mall:
+1. **发布者**：实例 A 删除发布 pub_mall：
 
     ```mysql
     -- 实例 A
     drop publication pub_mall;
     ```
 
-2. **发布者**: 实例 A 创建数据库 mall2 与表 customer2:
+2. **发布者**：实例 A 创建数据库 mall2 与表 customer2：
 
     ```mysql
     -- 实例 A
@@ -258,14 +258,14 @@ mysql -h freetier-01.cn-hangzhou.cluster.matrixonecloud.cn -P 6001
     create table mall2.customer2 (customer_id INT,customer_name VARCHAR(255));
     ```
 
-3. **发布者**: 实例 A 重新创建 pub_mall:
+3. **发布者**：实例 A 重新创建 pub_mall：
 
     ```mysql
     -- 实例 A
     create publication pub_mall database mall2;
     ```
 
-4. **订阅者**: 实例 B 连接 sub_mall 成功：
+4. **订阅者**：实例 B 连接 sub_mall 成功：
 
     ```mysql
     -- 实例 B 

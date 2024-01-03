@@ -23,7 +23,7 @@ SELECT column_list ...
 - 所有 `SELECT` 语句中出现的列的数量和顺序必须相同。
 - 列的数据类型必须相同或可转换。
 
-使用 `UNION ALL`，则重复行（如果可用）将保留在结果中。因为 `UNION ALL` 不需要处理重复项。
+使用 `UNION ALL`，则重复行 (如果可用) 将保留在结果中。因为 `UNION ALL` 不需要处理重复项。
 
 #### `UNION` 与 `ORDER BY`，`LIMIT`
 

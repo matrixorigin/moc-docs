@@ -39,13 +39,13 @@ UPDATE table_reference
 
 1. `UPDATE table_reference`：指定要更新数据的目标表。table_reference 可以是单个表或多个表的联接。
 
-2. `SET assignment_list`：指定要更新的列和值。assignment_list 是一个由列名和相应的值组成的列表，用逗号分隔。每个列名后面使用等号（=）将其与要更新的新值相关联。
+2. `SET assignment_list`：指定要更新的列和值。assignment_list 是一个由列名和相应的值组成的列表，用逗号分隔。每个列名后面使用等号 (=) 将其与要更新的新值相关联。
 
-3. `[WHERE where_condition]`（可选）：WHERE 子句用于指定更新数据的条件。只有满足指定条件的行才会被更新。where_condition 是一个逻辑表达式，可以使用各种比较运算符和逻辑运算符来定义条件。
+3. `[WHERE where_condition]` (可选)：WHERE 子句用于指定更新数据的条件。只有满足指定条件的行才会被更新。where_condition 是一个逻辑表达式，可以使用各种比较运算符和逻辑运算符来定义条件。
 
-4. `[ORDER BY ...]`（可选）：ORDER BY 子句用于按指定的列对要更新的行进行排序。可以使用一个或多个列，并可以指定升序（ASC）或降序（DESC）排序。排序将影响更新的行的顺序。
+4. `[ORDER BY ...]` (可选)：ORDER BY 子句用于按指定的列对要更新的行进行排序。可以使用一个或多个列，并可以指定升序 (ASC) 或降序 (DESC) 排序。排序将影响更新的行的顺序。
 
-5. `[LIMIT row_count]`（可选）：LIMIT 子句用于限制要更新的行数。它指定要更新的最大行数（row_count）。如果未指定 LIMIT 子句，则将更新满足 WHERE 条件的所有行。
+5. `[LIMIT row_count]` (可选)：LIMIT 子句用于限制要更新的行数。它指定要更新的最大行数 (row_count)。如果未指定 LIMIT 子句，则将更新满足 WHERE 条件的所有行。
 
 更新数据的过程中，指定要更新的表、要更新的列和值、更新的条件以及排序和限制，以便根据需求进行灵活的数据更新。
 
@@ -58,13 +58,13 @@ UPDATE table_reference
 
 1. `INSERT INTO [db.]table [(c1, c2, c3)] VALUES (v11, v12, v13), (v21, v22, v23), ...`
    - `INSERT INTO` 语句用于向表中插入新的行。
-   - `[db.]`（可选）指定表所在的数据库名称。如果未提供数据库名称，则默认为当前数据库。
+   - `[db.]` (可选) 指定表所在的数据库名称。如果未提供数据库名称，则默认为当前数据库。
    - `table` 是要插入数据的目标表的名称。
-   - `[(c1, c2, c3)]`（可选）指定要插入的列，用括号括起来，并使用逗号分隔列名。如果未指定列名，则假定将插入表中所有可用的列。
+   - `[(c1, c2, c3)]` (可选) 指定要插入的列，用括号括起来，并使用逗号分隔列名。如果未指定列名，则假定将插入表中所有可用的列。
    - `VALUES` 子句指定要插入的值。每个值与对应的列一一对应，用逗号分隔，放在括号中。可以插入多行数据，每一行用逗号分隔。
 
 2. `[ON DUPLICATE KEY UPDATE column1 = value1, column2 = value2, column3 = value3, ...]`
-   - `ON DUPLICATE KEY UPDATE` 子句用于在插入数据时处理重复键（Duplicate Key）的情况。
+   - `ON DUPLICATE KEY UPDATE` 子句用于在插入数据时处理重复键 (Duplicate Key) 的情况。
    - 当插入的数据中存在重复键时，即某一列或组合列的值与已存在的行的键值相同，将执行 UPDATE 操作而不是插入新行。
    - `column1, column2, column3` 等表示要更新的列名，`value1, value2, value3` 等表示要更新的对应值。
 

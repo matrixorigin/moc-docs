@@ -2,7 +2,7 @@
 
 MatrixOne 使用的时区取决于三个系统变量：`global.time_zone`，`session.time_zone` 和 `global.system_time_zone`。
 
-* `global.system_time_zone` 表示服务器系统时区。当服务器启动时，它会尝试确定主机的时区，并使用它来设置系统时区（`system_time_zone`）。
+* `global.system_time_zone` 表示服务器系统时区。当服务器启动时，它会尝试确定主机的时区，并使用它来设置系统时区 (`system_time_zone`)。
 
 * `global.time_zone` 表示服务器当前时区。初始 `time_zone` 值为 `SYSTEM`，表示服务器时区与系统时区相同。
 
@@ -34,16 +34,16 @@ SET time_zone = timezone;
 
 * 值 `SYSTEM` 表示时区应与服务器系统时区相同。
 
-* 值 `UTC` 表示时区设置为 UTC（Coordinated Universal Time，协调世界时）。仅支持“UTC”缩写作为时区使用。
+* 值 `UTC` 表示时区设置为 UTC (Coordinated Universal Time，协调世界时)。仅支持 “UTC” 缩写作为时区使用。
 
-* 该值可以作为字符串给出，表示 UTC 时间的偏移，格式为“HH:MM”，带有 + 或 -，例如 `+10:00` 或者 `-6:00`。允许的范围是“-13:59”到“+14:00”。
+* 该值可以作为字符串给出，表示 UTC 时间的偏移，格式为 “HH:MM”，带有 + 或 -，例如 `+10:00` 或者 `-6:00`。允许的范围是 “-13:59” 到 “+14:00”。
 
 当前会话时区设置会影响时区敏感时间值的显示和存储。即会影响执行 `NOW()` 等函数查询到的值以及存储在 `TIMESTAMP` 列中和从 `TIMESTAMP` 列中查询到的值。
 
 会话时区设置不影响 `UTC_TIMESTAMP()` 等函数显示的值或 `DATE`、`TIME` 或 `DATETIME` 列中的值。
 
 !!! note
-    只有 Timestamp 数据类型的值是受时区影响的。可以理解为，Timestamp 数据类型的实际表示使用的是（字面值 + 时区信息）。其它时间和日期类型，比如 Datetime/Date/Time 是不包含时区信息的，所以也不受到时区变化的影响。
+    只有 Timestamp 数据类型的值是受时区影响的。可以理解为，Timestamp 数据类型的实际表示使用的是 (字面值 + 时区信息)。其它时间和日期类型，比如 Datetime/Date/Time 是不包含时区信息的，所以也不受到时区变化的影响。
 
 ```sql
 > SELECT @@global.time_zone, @@session.time_zone, @@global.system_time_zone;

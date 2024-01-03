@@ -1,4 +1,4 @@
-# 基于角色的访问控制（RBAC）
+# 基于角色的访问控制 (RBAC)
 
 ## 概述
 
@@ -9,11 +9,11 @@ MatrixOne Cloud 权限管理帮助你管理租户、用户帐号生命周期，�
 
 MatrixOne Cloud 的权限管理是结合了基于角色的访问控制 (RBAC，Role-based access control) 和自主访问控制 (DAC，Discretionary access control) 两种安全模型设计和实现的，这两种安全模型是中立的访问控制机制，主要围绕角色和权限授权策略。它既保证了数据访问的安全性，又给数据库运维人员提供了灵活且便捷的管理方法。
 
-- **基于角色的访问控制（RBAC）**：将权限分配给角色，再将角色分配给用户。
+- **基于角色的访问控制 (RBAC)**：将权限分配给角色，再将角色分配给用户。
 
    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/security/basic-concepts-1.png)
 
-- **自主访问控制（DAC）**：每个对象都有一个所有者，所有者可以设置和授予对该对象的访问权限。
+- **自主访问控制 (DAC)**：每个对象都有一个所有者，所有者可以设置和授予对该对象的访问权限。
 
    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/security/dac.png)
 
@@ -25,19 +25,19 @@ MatrixOne Cloud 的权限管理是结合了基于角色的访问控制 (RBAC，R
 
 #### 对象与对象之间的关系
 
-一个 MatrixOne Cloud 账号下可以创建多个实例，一个实例即是一个租户（Account），一个租户下可以创建多个用户和角色，一个数据库中可以创建多个表和视图。
+一个 MatrixOne Cloud 账号下可以创建多个实例，一个实例即是一个租户 (Account)，一个租户下可以创建多个用户和角色，一个数据库中可以创建多个表和视图。
 
-在 MatrixOne Cloud 中，尽管每个对象中的操作权限是相互独立的（例如 Database 对象中的 `SHOW TABLES` 权限和 Table 对象中的 `SELECT` 权限并没有直接关系），但对象之间的创建仍具有一定关联，例如 Database 对象中的 `CREAT TABLE` 权限可以创建 Table 对象，这便形成了对象之间的层级关系，
+在 MatrixOne Cloud 中，尽管每个对象中的操作权限是相互独立的 (例如 Database 对象中的 `SHOW TABLES` 权限和 Table 对象中的 `SELECT` 权限并没有直接关系)，但对象之间的创建仍具有一定关联，例如 Database 对象中的 `CREAT TABLE` 权限可以创建 Table 对象，这便形成了对象之间的层级关系，
 
 那么，由于高层级对象可以创建低层级对象，那么较高层级的对象就是**对象的创建者 (Owner)**。
 
-#### 对象的创建者（Owner）
+#### 对象的创建者 (Owner)
 
-当一个对象被创建后，创建者便是这个对象的 Owner，它具有管理这个对象的最高权限（即 **Ownership 权限**，它是对象内所封装的所有权限），那么 Owner 的操作权限集合了该对象的所有操作权限。
+当一个对象被创建后，创建者便是这个对象的 Owner，它具有管理这个对象的最高权限 (即 **Ownership 权限**，它是对象内所封装的所有权限)，那么 Owner 的操作权限集合了该对象的所有操作权限。
 
 例如 Table 对象有 `Select`，`Insert`，`Update`，`Delete`，`Truncate`，`Ownership` 权限，如果一个角色拥有了某个 Table 的 Ownership 权限，那么该角色等同于拥有了 `Select`，`Insert`，`Update`，`Delete`，`Truncate` 权限。
 
-由于权限、角色和用户之间的传递性，你可以把对象的创建者（以下称为对象 Owner）理解为一个角色。
+由于权限、角色和用户之间的传递性，你可以把对象的创建者 (以下称为对象 Owner) 理解为一个角色。
 
 **如何理解对象的创建者是一个角色呢？**
 
@@ -61,7 +61,7 @@ MatrixOne Cloud 的权限管理是结合了基于角色的访问控制 (RBAC，R
 
 - Owner 可以转移给另一个角色。
 
-**Note**: *ACCOUNTADMIN* (租户管理员角色，租户被创建后即自动生成) 虽然不是租户内所用对象的 Owner，但它拥有所有对象的 Ownership 权限。
+**Note**：*ACCOUNTADMIN* (租户管理员角色，租户被创建后即自动生成) 虽然不是租户内所用对象的 Owner，但它拥有所有对象的 Ownership 权限。
 
 ### 租户
 
@@ -77,7 +77,7 @@ MatrixOne Cloud 可以创建和管理多个数据和用户权限体系完全隔�
 
 设立**角色**，是为了节省相同权限授予的操作成本。p1，p2，p3 这三个权限都需要被授予给用户 u1，u2，u3，你只需要先将 p1，p2，p3 授予角色 r1，再将角色 r1 一次性授予用户 u1，u2，u3，相比把每个权限都分别授予每个用户来说，操作上更为简单，并且随着用户和权限数目的增加，这一优势会越发明显。同时，角色的出现进一步抽象了权限集合及其关系，对于后期的权限维护也十分方便。
 
-MatrixOne Cloud 在集群和租户 (Account) 创建后，会自动创建一些默认角色和用户（详见下面的**初始化访问**章节），这些角色具有最高管理权限，用于在最开始管理集群和租户 (Account)，我们不建议您将这些角色授予日常执行 SQL 的用户，权限过高会引入更多的安全问题，因此，MatrixOne Cloud 支持创建自定义角色，您可以根据用户的业务需要自定义角色，再将适合的权限赋予这些角色。
+MatrixOne Cloud 在集群和租户 (Account) 创建后，会自动创建一些默认角色和用户 (详见下面的**初始化访问**章节)，这些角色具有最高管理权限，用于在最开始管理集群和租户 (Account)，我们不建议您将这些角色授予日常执行 SQL 的用户，权限过高会引入更多的安全问题，因此，MatrixOne Cloud 支持创建自定义角色，您可以根据用户的业务需要自定义角色，再将适合的权限赋予这些角色。
 
 **角色要点**
 
@@ -92,9 +92,9 @@ MatrixOne Cloud 在集群和租户 (Account) 创建后，会自动创建一些�
 - 角色和用户仅在各自的租户 (Account) 内生效，包括系统租户 (Sys Account)。
 
 !!! note
-    1. 角色的权限继承是动态的，如果被继承角色的权限发生了变化，那么继承角色所继承的权限范围也会动态变化。
-    2. 角色的继承关系不能成环。例如，role1 继承了 role2，role 2 继承了 role3，role3 继承了 role1。
-    3. 角色间的权限传递使得权限管理更加便捷，但同时也存在风险，为此，MatrixOne Cloud 只允许具有 *Manage Grants* 权限的角色才能做这样的操作，该权限被默认赋予给系统默认角色 *MOADMIN* 或 *ACCOUNTADMIN* 中，并且不建议在新建自定义角色时将该权限授予给自定义角色。
+    1。角色的权限继承是动态的，如果被继承角色的权限发生了变化，那么继承角色所继承的权限范围也会动态变化。
+    2。角色的继承关系不能成环。例如，role1 继承了 role2，role 2 继承了 role3，role3 继承了 role1。
+    3。角色间的权限传递使得权限管理更加便捷，但同时也存在风险，为此，MatrixOne Cloud 只允许具有 *Manage Grants* 权限的角色才能做这样的操作，该权限被默认赋予给系统默认角色 *MOADMIN* 或 *ACCOUNTADMIN* 中，并且不建议在新建自定义角色时将该权限授予给自定义角色。
 
 #### 角色切换
 
@@ -103,7 +103,7 @@ MatrixOne Cloud 在集群和租户 (Account) 创建后，会自动创建一些�
 **主要角色**：用户在某一时刻只能使用其中一个角色，我们称当前所使用的这个角色为**主要角色**。
 **次要角色**：除了主要角色之外该用户所拥有的其他角色集合称为**次要角色**。
 
-在默认情况下，如果用户想去执行另一个角色权限的 SQL 时，需要先切换角色（即 `set role <role>`）。此外，为了兼容经典数据库的权限行为，MatrixOne Cloud 还支持开启*使用次要角色*的功能：使用 `set secondary role all`，执行这条 SQL 后，该用户便可同时拥有他所有角色的权限了，执行 `set secondary role none` 即可关闭此功能。
+在默认情况下，如果用户想去执行另一个角色权限的 SQL 时，需要先切换角色 (即 `set role <role>`)。此外，为了兼容经典数据库的权限行为，MatrixOne Cloud 还支持开启*使用次要角色*的功能：使用 `set secondary role all`，执行这条 SQL 后，该用户便可同时拥有他所有角色的权限了，执行 `set secondary role none` 即可关闭此功能。
 
 ## 应用场景
 
@@ -125,7 +125,7 @@ A 公司购买了 MatrixOne Cloud，并且完成了部署。由于 A 公司规�
 
 研发同事 *Joe* 是这个 A 公司项目 *BusinessApp* 的应用开发者，*Joe* 有一个开发任务，*Joe* 需要使用数据库内所有的数据。那么 *Robert* 就要帮 *Joe* 开通账号，给 *Joe* 授权：
 
-1. *Robert* 先给 *Joe* 创建了一个用户账号（即，用户），名字叫做 *Joe_G*，*Joe* 就使用 *Joe_G* 这个账号登录到 MatrixOne。
+1. *Robert* 先给 *Joe* 创建了一个用户账号 (即，用户)，名字叫做 *Joe_G*，*Joe* 就使用 *Joe_G* 这个账号登录到 MatrixOne。
 2. *Robert* 又给 *Joe* 创建了一个角色，名字叫做 *Appdeveloper*，并且把 *Appdeveloper* 角色赋予给 *Joe* 的用户账号 *Joe_G* 上。
 3. *Robert* 又给角色 *Appdeveloper* 授予了 *ALL ON DATABASE* 的权限。
 4. *Joe* 就可以使用 *Joe_G* 这个账号登录到 MatrixOne，并且全权操作数据库进行开发了。

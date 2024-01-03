@@ -42,11 +42,11 @@ MatrixOne 现在支持通过以下几种数据库客户端工具的方式连接 
 
 2. 安装 Navicat 完成后，打开 Navicat，点击左上角 **Connection > MySQL**，在弹窗中填入如下参数：
 
-    - **Connction Name**: MOCloud
-    - **Host**: moc.cluster.matrixonecloud.cn
-    - **Port**: 6001
-    - **User Name**: a123456b_78cd_9e12_fg34_abcd5d6789ef:admin:accountadmin
-    - **Password**: your_password
+    - **Connction Name**：MOCloud
+    - **Host**：moc.cluster.matrixonecloud.cn
+    - **Port**：6001
+    - **User Name**：a123456b_78cd_9e12_fg34_abcd5d6789ef:admin:accountadmin
+    - **Password**：your_password
     - **Save password**：勾选
 
 3. 点击 **Save** 保存设置。
@@ -73,12 +73,12 @@ MatrixOne 现在支持通过以下几种数据库客户端工具的方式连接 
 
     在 **Connect to a database** 窗口的 **Main** 区中填写如下参数：
 
-    - **Host**: moc.cluster.matrixonecloud.cn
-    - **Port**: 6001
-    - **Database**: system
-    - **User Name**: a123456b_78cd_9e12_fg34_abcd5d6789ef:admin:accountadmin
-    - **Password**: your_password
-    - **Save password locally**: 勾选
+    - **Host**：moc.cluster.matrixonecloud.cn
+    - **Port**：6001
+    - **Database**：system
+    - **User Name**：a123456b_78cd_9e12_fg34_abcd5d6789ef:admin:accountadmin
+    - **Password**：your_password
+    - **Save password locally**：勾选
     !!! note
         初次连接可以将 Database 选项填写系统库 `system` 方便连接，后续可根据需求自行修改。  
 
