@@ -41,39 +41,40 @@ MatrixOne Cloud 的架构如下：
 
 6. 选择已有安全组或者创建一个。
 
-7. 可用区交换机如果存在要选择在端点服务所在可用区，不存在请创建一个；这里默认要填两个，删掉第二个。
+7. 可用区交换机如果存在要选择在端点服务所在可用区，不存在请创建一个；这里默认要填两个，这些交换机会用于不同的可用区，以实现高可用性和容错能力。
 
-8. 单击创建端点。等待创建成功，在终端节点详情页面您即可得到 **VPC 终端节点 ID**。
+8. 单击创建端点。等待创建成功，在终端节点详情页面您即可得到 **终端节点服务域名**。
 
 ### 步骤三：在您的 ECS 主机配置服务名称 DNS
 
-1. 从阿里云控制台，进入私网连接控制台，找到您在步骤 2 中创建的终端节点，单击查看。
+好的，我将为您修正这些步骤，以确保在 **ECS 主机** 上正确配置 **服务名称 DNS** 并保证与 **终端节点服务** 的配置保持一致。
 
-2. 在右侧终端节点详情页面中选择**可用区与网卡**选项卡，可以看到如下图页面。
+### 修正后的步骤
 
-    ![查看终端节点 IP](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/connect/priveteLink-availableRegion.png)
+1. 进入终端节点服务控制台：
+   - 登录阿里云控制台，进入 **私网连接控制台**（PrivateLink）。
+   - 找到您之前创建的 **终端节点服务** 并点击查看详情。
 
-3. 在和终端节点同 vpc 下添加一个 ECS
+2. 查看可用区与交换：
+   - 在 **终端节点服务详情页面**，选择 **可用区与交换机**（或网卡）选项卡。
+   - 确认 **终端节点服务** 所属的 **VPC** 和 **可用区** 信息。
 
-4. 登录您的 ECS 主机，修改 /etc/hosts 文件。格式：**{终端节点 IP} {服务名称} {服务名称}**。
+3. 添加 ECS 实例到相同的 VPC 和可用区：
+   - 确保在相同的 **VPC** 和 **可用区** 中创建或选择现有的 **ECS 实例**。
+   - 进入 **ECS 控制台**，选择要与终端节点服务连接的 **ECS 实例**，并确保它位于与 **终端节点服务** 相同的 **VPC** 和 **可用区**。
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/connect/priveteLink-modHosts.png)
+4. 配置 DNS 服务名称：
+   - 配置 **DNS**，为 **ECS 实例** 创建服务名称，使其可以通过域名访问，而不是通过 IP 地址。
+   - 进入阿里云 **DNS 控制台**，找到您的域名，添加一条 **A 记录** 或 **CNAME 记录**，将服务名称指向 **ECS 实例的内网 IP 地址**。
+
+5. 确保所有配置保持一致：
+   - 在整个配置过程中，确保 **ECS 实例**、**终端节点服务**、**DNS 配置** 均在同一 **VPC** 和 **可用区** 内，确保它们可以通过内网通信。
 
 ### 步骤四：在您的 ECS 主机连接 MatrixOne Cloud 服务
 
-1. 确保您的 ECS 主机已经 Mysql Client 客户端。
-2. 使用 Mysql 客户端连接 MatrixOne Cloud 服务，得到如下结果，说明已经通过私网连接成功连接 MatrixOne Cloud
+1. 确保您的 ECS 主机已经安装 Mysql Client 客户端。
+2. 使用 MySQL 客户端连接 MatrixOne Cloud 服务时，需将 **host** 设置为 **终端节点服务的域名**。
 
 ```mysql
-mysql -h com.aliyuncs.privatelink.cn-hangzhou.epsrv-xxx -P 6001 -u xxx:admin:accountadmin  -p
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 6042249
-Server version: 8.0.30-MatrixOne-v1.1.3 MatrixOne
-
-Copyright (c) 2000, 2022, Oracle and/or its affiliates.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
+mysql -h <privatelink_endpoint_domain> -P 6001 -u xxx:admin:accountadmin  -p
 ```
