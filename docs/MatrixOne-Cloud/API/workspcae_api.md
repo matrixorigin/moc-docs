@@ -175,8 +175,8 @@ body = {
     "config": {
         "oss": {  # 如果 source_type 为 4，填此字段
             "endpoint": "oss-cn-beijing.aliyuncs.com",
-            "access_key_id": "LTAI5tAo2wrk5u38gJUC9NjB",
-            "access_key_secret": "QW8zLb0OG7PH5CazQJ5fVK3P6Dfjuj",
+            "access_key_id": "xxxx",
+            "access_key_secret": "xxxx",
             "bucket_name": "yj-bucket1"
         }
     }
@@ -232,8 +232,8 @@ body = {
     "config": {
         "oss": {
             "endpoint": "oss-cn-beijing.aliyuncs.com",
-            "access_key_id": "LTAI5tAo2wrk5u38gJUC9NjB",
-            "access_key_secret": "QW8zLb0OG7PH5CazQJ5fVK3P6Dfjuj",
+            "access_key_id": "xxxx",
+            "access_key_secret": "xxxx",
             "bucket_name": "yj-bucket1"
         }
     }
@@ -320,8 +320,8 @@ Response Body: {
                 "config": {
                     "oss": {
                         "endpoint": "oss-cn-beijing.aliyuncs.com",
-                        "access_key_id": "LTAI5tAo2wrk5u38gJUC9NjB",
-                        "access_key_secret": "QW8zLb0OG7PH5CazQJ5fVK3P6Dfjuj",
+                        "access_key_id": "xxxx",
+                        "access_key_secret": "xxxx",
                         "bucket_name": "yj-bucket1"
                     }
                 }
@@ -338,8 +338,8 @@ Response Body: {
                 "config": {
                     "s3": {
                         "endpoint": "http://s3.us-west-2.amazonaws.com",
-                        "access_key_id": "AKIAYOFAMAB7FSGHWGZO",
-                        "access_key_secret": "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",
+                        "access_key_id": "xxxx",
+                        "access_key_secret": "xxxx",
                         "bucket_name": "test-bucket0121",
                         "region": "us-west-2"
                     }
@@ -406,8 +406,8 @@ body = {
     "config": {
                     "s3": {
                         "endpoint": "http://s3.us-west-2.amazonaws.com",
-                        "access_key_id": "AKIAYOFAMAB7FSGHWGZO",
-                        "access_key_secret": "i2uAQOHOrwhZCTYqi2NsskIUqSkuABNLHLMdPCpj",
+                        "access_key_id": "xxxx",
+                        "access_key_secret": "<YOUR_access_key_secret>",
                         "bucket_name": "test-bucket0121",
                         "region": "us-west-2"
                     }
