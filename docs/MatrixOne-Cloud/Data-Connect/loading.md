@@ -4,10 +4,10 @@
 
 ## 如何进行数据载入
 
-进入到 MatrixOne Intelligence 工作区，依次点击**数据接入**>**数据载入**>**载入数据**，选择数据源进行载入，目前仅支持载入 pdf 格式文件。
+进入到 MatrixOne Intelligence 工作区，依次点击**数据接入**>**数据载入**>**载入数据**，选择连接器进行载入，目前仅支持载入 pdf 格式文件。
 
 <div align="center">
-    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-connect/connect-3.png
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-connect/conn-3.png
  width=80% heigth=80%/>
 </div>
 
@@ -15,9 +15,9 @@
   
 - 载入模式：分为一次性载入和周期载入。一次性载入适合仅需导入一次的场景，周期性载入适合定期更新数据的需求，并可设置具体周期（如每小时或每日）。
 
-创建完载入任务后，可以在数据载入列表中查看载入详情，对于运行中的载入任务您可以随时进行停止操作，当状态变成“完成”表示载入任务已成功。
+创建完载入任务后，可以在数据载入列表中查看载入详情，对于运行中的载入任务您可以随时进行停止操作，只有任务在停止状态才能修改载入信息。当状态变成“完成”表示载入任务已成功。
 
 <div align="center">
-    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-connect/loading-1.png
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-connect/load-1.png
  width=100% heigth=100%/>
 </div>

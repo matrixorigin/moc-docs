@@ -559,7 +559,12 @@ nav:
         - MatrixOne 的 JDBC 功能支持列表: MatrixOne-Cloud/Reference/Limitations/mo-jdbc-feature-list.md
         - MatrixOne DDL 语句分区支持的说明: MatrixOne-Cloud/Reference/Limitations/mo-partition-support.md
         - MatrixOne 的 Load Data 支持的说明: MatrixOne-Cloud/Reference/Limitations/load-data-support.md
-    - API 说明: MatrixOne-Cloud/API/workspcae_api.md
+    - API 说明: 
+        - 鉴权: MatrixOne-Cloud/API/token_api.md
+        - 数据接入: MatrixOne-Cloud/API/data_connect_api.md
+        - 数据处理: MatrixOne-Cloud/API/data_processing_api.md
+        - 数据探索: MatrixOne-Cloud/API/data_explore_api.md
+        - 指标: MatrixOne-Cloud/API/indicator_api.md
     - 常见问题:
         - SQL 常见问题: MatrixOne-Cloud/FAQs/sql-faqs.md
         - MatrixOne Intelligence 常见问题: MatrixOne-Cloud/FAQs/FAQ-Product.md

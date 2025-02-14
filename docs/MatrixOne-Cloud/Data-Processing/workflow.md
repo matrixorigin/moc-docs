@@ -7,7 +7,7 @@
 进入到工作区，依次点击**数据处理**>**工作流**>**创建工作流**，根据实际情况填写来进行工作流的创建。
 
 <div align="center">
-    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-processing/workflow-1.png
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/mocdocs/data-processing/workflow_1.png
  width=80% heigth=80%/>
 </div>
 
