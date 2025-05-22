@@ -5,7 +5,7 @@
 ### 创建连接器
 
 ```
-POST /conectors
+POST /connectors
 ```
   
 **输入参数：**

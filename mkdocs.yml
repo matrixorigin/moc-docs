@@ -38,6 +38,8 @@ nav:
       - MatrixOne Intelligence 简介: MatrixOne-Intelligence/Overview/matrixone-intelligence-introduction.md
       - MySQL 兼容性: MatrixOne-Intelligence/Overview/mysql-compatibility.md
       - MOne 助手: MatrixOne-Intelligence/Overview/mone-introduction.md
+    - API:
+      - 数据处理相关 API: MatrixOne-Intelligence/API/data_processing_api.md
     - 快速开始:
       - 快速创建 GenAI 工作区: MatrixOne-Intelligence/Get-Started/workspace.md
       - 快速创建数据库实例: MatrixOne-Intelligence/Get-Started/quickstart.md
