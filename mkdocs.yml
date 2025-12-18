@@ -81,7 +81,7 @@ nav:
       - API 说明:
         - 原子能力 API 说明: MatrixOne-Intelligence/workflow api/automic_api.md
         - 工作流 API 说明:
-          - 鉴权: MatrixOne-Intelligence/workflow api/token_api.md
+          - 密钥管理: MatrixOne-Intelligence/workflow api/token_api.md
           - 数据接入: MatrixOne-Intelligence/workflow api/data_connect_api.md
           - 数据处理: MatrixOne-Intelligence/workflow api/data_processing_api.md
           - 数据探索: MatrixOne-Intelligence/workflow api/data_explore_api_v2.md
