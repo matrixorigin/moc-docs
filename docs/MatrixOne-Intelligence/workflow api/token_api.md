@@ -1,4 +1,139 @@
-# 密钥管理
+# 鉴权相关 API
+
+## 获取 token
+
+```
+POST /auth/login
+```
+
+**输入参数：**
+  
+|  参数             | 是否必填 |含义|
+|  --------------- | ------- |----  |
+| account_name     | 是      | 工作区 ID |
+| username         | 是      | 管理员名称 |
+| password         | 是      | 管理员密码 |
+| type             | 否      | 认证类型。如果值为 "workspace"，则视为工作区认证。如果未提供该参数或值不为 "workspace"，则默认为 MOC 认证。 |
+
+**输出参数：**
+  
+|  参数             | 含义 |
+|  --------------- | ----  |
+| uid              | user uuid      |
+| Access-Token     | 鉴权码，有效期 15 分钟     |
+| Refresh-Token    | 用于 Access-Token 过期后刷新    |
+
+**示例：**
+
+```python
+import requests
+import json
+
+url = "https://freetier-01.cn-hangzhou.cluster.matrixonecloud.cn/auth/login"
+# 设置请求头
+headers = {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json"
+}
+body = {
+    "account_name": "YOUR_ACCOUNT_NAME",
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD",
+    "type": "workspace" # 可选。值为 "workspace" 时为工作区认证，不传或其他值则默认为 MOC 认证。
+}
+
+# 发送请求
+response = requests.post(url, headers=headers, json=body)
+
+# 打印响应头和内容（格式化 JSON）
+print("Response Headers:", json.dumps(dict(response.headers), indent=4))
+print("Response Body:", json.dumps(response.json(), indent=4, ensure_ascii=False))
+```
+
+返回：
+
+```bash
+Response Headers: {
+    "Date": "Wed, 12 Feb 2025 03:38:36 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "178",
+    "Connection": "keep-alive",
+    "Access-Token": "YOUR_ACCESS_TOKEN",
+    "Refresh-Token": "YOUR_REFRESH_TOKEN",
+    "X-Request-Id": "YOUR_REQUEST_ID",
+    "Set-Cookie": "SERVERID=YOUR_COOKIE_SERVERID_VALUE|TIMESTAMP|TIMESTAMP;Path=/"
+}
+Response Body: {
+    "code": "OK",
+    "msg": "OK",
+    "data": {
+        "uid": "YOUR_UID",
+        "login_at": "2025-02-12T03:38:36.566638078Z"
+    }
+}
+```
+
+在 Response Header 中获取 access-token 和 refresh-token，从返回结构体中获取 uid。Access-Token 有效期 15min，过期之前，需要调用下面 Refresh 接口，获取新的 Access-Token。后续请求中，**Access-Token** 和 **uid** 可用于生成/刷新 moi-key，方便调用其他 API。
+
+## 刷新 token
+
+在 Access-Token 过期之前，请求中带上 Access-Token，Refresh-Token 和 Uid，新的 Access-Token，Refresh-Token 会在 Response Header 中返回
+
+```
+POST auth/refresh
+```
+
+**示例：**
+
+其中，accsee-token、refresh-token 和 uid 在**获取 token** 步骤返回。
+
+```python
+import requests
+import json
+# API URL
+url = "https://freetier-01.cn-hangzhou.cluster.matrixonecloud.cn/auth/refresh"
+
+# 请求头
+headers = {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json",
+    "Access-Token": "YOUR_ACCESS_TOKEN",
+    "Refresh-Token": "YOUR_REFRESH_TOKEN",
+    "uid": "YOUR_UID"
+}
+
+# 请求体（Body JSON）
+body = {
+    "type": "user"
+}
+
+# 发送请求
+response = requests.post(url, headers=headers, json=body)
+
+# 打印响应头和内容（格式化 JSON）
+print("Response Headers:", json.dumps(dict(response.headers), indent=4))
+print("Response Body:", json.dumps(response.json(), indent=4, ensure_ascii=False))
+```
+
+返回：
+
+```bash
+Response Headers: {
+    "Date": "Wed, 12 Feb 2025 03:40:45 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "24",
+    "Connection": "keep-alive",
+    "Access-Token": "YOUR_NEW_ACCESS_TOKEN",
+    "X-Request-Id": "YOUR_REQUEST_ID",
+    "Set-Cookie": "SERVERID=YOUR_COOKIE_SERVERID_VALUE|TIMESTAMP|TIMESTAMP;Path=/"
+}
+Response Body: {
+    "code": "OK",
+    "msg": "OK"
+}
+```
+
+## API Key 管理
 
 **说明：**下述接口用于管理 MOI 工作区的 API Key。成功获取或创建 API Key 后，其返回的 `moi-key` 在请求其他 MOI 业务 API 时，在 Header 中传递以进行鉴权。
 
@@ -8,7 +143,7 @@
 
 *图示：在页面右上角点击用户头像，可以看到下拉菜单中的 "API 管理" 选项*
 
-## 创建 API Key
+### 创建 API Key
 
 ```
 POST /user/me/api-key
@@ -83,7 +218,7 @@ else:
 }
 ```
 
-## 刷新 API Key
+### 刷新 API Key
 
 ```
 POST /user/me/api-key/refresh
